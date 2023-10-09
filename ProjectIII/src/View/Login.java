@@ -1,12 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package View;
+
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author deivi
+ * @author deivis
  */
 public class Login extends javax.swing.JFrame {
 
@@ -15,6 +13,20 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+    }
+
+    public void Ingresar() {
+        String enteredPassword = txtpassword.getText(); 
+
+        // Verify the password 
+        if (enteredPassword.equals("superadmin")) {
+            // The password is correct, so display the admin JFrame
+            Administrator adminFrame = new Administrator();
+            adminFrame.setVisible(true);
+        } else {
+            // The password is incorrect, you can display an error message or perform some other action
+            JOptionPane.showMessageDialog(this, "Contraseña Incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     /**
@@ -144,7 +156,8 @@ public class Login extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // Get the entered username and password from text fields
-       
+        this.Ingresar();
+        
     }//GEN-LAST:event_btnIngresarActionPerformed
 
 
