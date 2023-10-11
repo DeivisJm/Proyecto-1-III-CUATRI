@@ -192,7 +192,6 @@ public class Login extends javax.swing.JFrame {
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // Get the entered username and password from text fields
         this.Ingresar();
-        
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void txtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpasswordActionPerformed
