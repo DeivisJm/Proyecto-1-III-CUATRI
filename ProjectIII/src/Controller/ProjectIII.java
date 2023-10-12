@@ -1,10 +1,10 @@
-package Model;
+package Controller;
 
 import View.*;
 import model.DBConnection;
 /**
  *
- * @author deivi
+ * @author deivis
  */
 public class ProjectIII {
 

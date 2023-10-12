@@ -9,6 +9,15 @@ public class Administrator extends javax.swing.JFrame {
     public Administrator() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.listUser();
+    }
+
+    private void listUser() {
+        this.cu.loadDataUser(tbluser);
+    }
+
+    private void clear() {
+        this.cu.clearFields(txtnameuser, txtlastnameuser, txtlasstnameuser, txtemailuser, txtpassworduser);
     }
 
     @SuppressWarnings("unchecked")
@@ -72,18 +81,18 @@ public class Administrator extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        txtsnameampling_site = new javax.swing.JTextField();
+        cbxsprovince_id = new javax.swing.JComboBox<>();
+        cbxscanton_id = new javax.swing.JComboBox<>();
+        cbxsdistrict = new javax.swing.JComboBox<>();
+        cbxsentity = new javax.swing.JComboBox<>();
         jPanel14 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tblentities3 = new javax.swing.JTable();
+        tblSampling_site = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
@@ -545,31 +554,31 @@ public class Administrator extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel21.setText("Entidad:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbxsprovince_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxsprovince_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbxsprovince_idActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        cbxscanton_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxscanton_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                cbxscanton_idActionPerformed(evt);
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        cbxsdistrict.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxsdistrict.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                cbxsdistrictActionPerformed(evt);
             }
         });
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        cbxsentity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxsentity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                cbxsentityActionPerformed(evt);
             }
         });
 
@@ -587,11 +596,11 @@ public class Administrator extends javax.swing.JFrame {
                     .addComponent(jLabel21))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
+                    .addComponent(cbxsentity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxsprovince_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxsdistrict, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxscanton_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtsnameampling_site, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
@@ -600,23 +609,23 @@ public class Administrator extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtsnameampling_site, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxsprovince_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxscanton_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxsdistrict, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxsentity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -657,7 +666,7 @@ public class Administrator extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        tblentities3.setModel(new javax.swing.table.DefaultTableModel(
+        tblSampling_site.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -673,15 +682,15 @@ public class Administrator extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(tblentities3);
-        if (tblentities3.getColumnModel().getColumnCount() > 0) {
-            tblentities3.getColumnModel().getColumn(0).setResizable(false);
-            tblentities3.getColumnModel().getColumn(1).setResizable(false);
-            tblentities3.getColumnModel().getColumn(2).setResizable(false);
-            tblentities3.getColumnModel().getColumn(3).setResizable(false);
-            tblentities3.getColumnModel().getColumn(4).setResizable(false);
-            tblentities3.getColumnModel().getColumn(5).setResizable(false);
-            tblentities3.getColumnModel().getColumn(6).setResizable(false);
+        jScrollPane4.setViewportView(tblSampling_site);
+        if (tblSampling_site.getColumnModel().getColumnCount() > 0) {
+            tblSampling_site.getColumnModel().getColumn(0).setResizable(false);
+            tblSampling_site.getColumnModel().getColumn(1).setResizable(false);
+            tblSampling_site.getColumnModel().getColumn(2).setResizable(false);
+            tblSampling_site.getColumnModel().getColumn(3).setResizable(false);
+            tblSampling_site.getColumnModel().getColumn(4).setResizable(false);
+            tblSampling_site.getColumnModel().getColumn(5).setResizable(false);
+            tblSampling_site.getColumnModel().getColumn(6).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -1025,6 +1034,11 @@ public class Administrator extends javax.swing.JFrame {
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder("Agregar"));
 
         btnedituser.setText("Editar");
+        btnedituser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnedituserActionPerformed(evt);
+            }
+        });
 
         btnadduser.setText("Agregar");
         btnadduser.addActionListener(new java.awt.event.ActionListener() {
@@ -1165,32 +1179,42 @@ public class Administrator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbxsprovince_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxsprovince_idActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbxsprovince_idActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void cbxscanton_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxscanton_idActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_cbxscanton_idActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void cbxsdistrictActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxsdistrictActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_cbxsdistrictActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void cbxsentityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxsentityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_cbxsentityActionPerformed
 
     private void btnadduserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadduserActionPerformed
         // TODO add your handling code here:
         this.cu.addUser(txtnameuser, txtlastnameuser, txtlasstnameuser, txtemailuser, txtpassworduser, cbxentityid, cbxrolid);
-        
+        this.clear();
+        this.listUser();
     }//GEN-LAST:event_btnadduserActionPerformed
 
     private void btndeleteuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteuserActionPerformed
         // TODO add your handling code here:
-   
+        this.cu.deleteUser();
+        this.clear();
+        this.listUser();
     }//GEN-LAST:event_btndeleteuserActionPerformed
+
+    private void btnedituserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnedituserActionPerformed
+        // TODO add your handling code here:
+        this.cu.updatedUser(txtnameuser, txtlastnameuser, txtlasstnameuser, txtemailuser, txtpassworduser, cbxentityid, cbxrolid);
+        this.clear();
+        this.listUser();
+    }//GEN-LAST:event_btnedituserActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1200,6 +1224,10 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JButton btnupdateuser;
     private javax.swing.JComboBox<String> cbxentityid;
     private javax.swing.JComboBox<String> cbxrolid;
+    private javax.swing.JComboBox<String> cbxscanton_id;
+    private javax.swing.JComboBox<String> cbxsdistrict;
+    private javax.swing.JComboBox<String> cbxsentity;
+    private javax.swing.JComboBox<String> cbxsprovince_id;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1216,13 +1244,9 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
@@ -1289,7 +1313,6 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
@@ -1300,9 +1323,9 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTable tblSampling_site;
     private javax.swing.JTable tblentities;
     private javax.swing.JTable tblentities2;
-    private javax.swing.JTable tblentities3;
     private javax.swing.JTable tblentities4;
     private javax.swing.JTable tbluser;
     private javax.swing.JTextField txtemailuser;
@@ -1313,5 +1336,6 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JTextField txtname4;
     private javax.swing.JTextField txtnameuser;
     private javax.swing.JTextField txtpassworduser;
+    private javax.swing.JTextField txtsnameampling_site;
     // End of variables declaration//GEN-END:variables
 }

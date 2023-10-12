@@ -12,12 +12,12 @@ import model.DBConnection;
  *
  * @author deivis
  */
-public class UserDAO {
+public class DAOUser {
 
-    public UserDAO() {
+    public DAOUser() {
     }
 
-    public void create(User user) {
+    public void createUser(User user) {
 
         DBConnection db = new DBConnection();
         String consultaSQL = "INSERT INTO user (id, name, first_name, second_name, email, password, entity_id, rol_id) VALUES (?, ?, ?, ?, ?, ?, ?,? )";
@@ -41,7 +41,7 @@ public class UserDAO {
         }
     }
 
-    public List<User> read() {
+    public List<User> readUser() {
 
         DBConnection db = new DBConnection();
         List<User> user = new ArrayList<>();
@@ -70,7 +70,7 @@ public class UserDAO {
         return user;
     }
 
-    public void update(User user) {
+    public void updateUser(User user) {
 
         DBConnection db = new DBConnection();
 
@@ -97,7 +97,7 @@ public class UserDAO {
 
     }
 
-    public void delete(int id) {
+    public void deleteUser(int id) {
 
         DBConnection db = new DBConnection();
 

@@ -1,17 +1,14 @@
 package Controller;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import Model.DAOUser;
 import Model.User;
-import Model.UserDAO;
 import javax.swing.JComboBox;
 
 /**
@@ -20,7 +17,7 @@ import javax.swing.JComboBox;
  */
 public class CtrlUser {
 
-    UserDAO dao = new UserDAO();
+    DAOUser dao = new DAOUser();
     int id;
 
     public void loadDataUser(JTable tbluser) {
@@ -29,16 +26,16 @@ public class CtrlUser {
         TableRowSorter<TableModel> order = new TableRowSorter<TableModel>(model);
         tbluser.setRowSorter(order);
         model.setRowCount(0);
-        List<User> users = dao.read();
+        List<User> users = dao.readUser();
         for (User user : users) {
-            Object[] row = {user.getId(),user.getName(),user.getFirst_lastname(),
-                user.getSecond_lastname(),user.getEmail(), user.getPassword()};
+            Object[] row = {user.getId(), user.getName(), user.getFirst_lastname(),
+                user.getSecond_lastname(), user.getEmail(), user.getPassword()};
             model.addRow(row);
         }
     }
 
     public void addUser(JTextField txtnameuser, JTextField txtlastnameuser, JTextField txtlasstnameuser, JTextField txtemailuser, JTextField txtpassworduser, JComboBox cbxentityid, JComboBox cbxrolid) {
-        this.dao.create(new User(txtnameuser.getText(), txtlastnameuser.getText(), txtlasstnameuser.getText(), txtemailuser.getText(), txtpassworduser.getText(), Integer.parseInt(cbxentityid.getSelectedItem().toString()), Integer.parseInt(cbxrolid.getSelectedItem().toString())));
+        this.dao.createUser(new User(txtnameuser.getText(), txtlastnameuser.getText(), txtlasstnameuser.getText(), txtemailuser.getText(), txtpassworduser.getText(), Integer.parseInt(cbxentityid.getSelectedItem().toString()), Integer.parseInt(cbxrolid.getSelectedItem().toString())));
     }
 
     public void clearFields(JTextField txtnameuser, JTextField txtlastnameuser, JTextField txtlasstnameuser, JTextField txtemailuser, JTextField txtpassworduser) {
@@ -52,12 +49,12 @@ public class CtrlUser {
 
     public void updatedUser(JTextField txtnameuser, JTextField txtlastnameuser, JTextField txtlasstnameuser, JTextField txtemailuser, JTextField txtpassworduser, JComboBox cbxentityid, JComboBox cbxrolid) {
 
-        this.dao.update(new User(txtnameuser.getText(), txtlastnameuser.getText(), txtlasstnameuser.getText(), txtemailuser.getText(), txtpassworduser.getText(), Integer.parseInt(cbxentityid.getSelectedItem().toString()), Integer.parseInt(cbxrolid.getSelectedItem().toString())));
+        this.dao.updateUser(new User(txtnameuser.getText(), txtlastnameuser.getText(), txtlasstnameuser.getText(), txtemailuser.getText(), txtpassworduser.getText(), Integer.parseInt(cbxentityid.getSelectedItem().toString()), Integer.parseInt(cbxrolid.getSelectedItem().toString())));
 
     }
 
     public void deleteUser() {
-        this.dao.delete(this.id);
+        this.dao.deleteUser(this.id);
     }
 
     public void selectedRow(JTable tbluser, JTextField txtnameuser, JTextField txtlastnameuser, JTextField txtlasstnameuser, JTextField txtemailuser, JTextField txtpassworduser, JComboBox cbxentityid, JComboBox cbxrolid) {
