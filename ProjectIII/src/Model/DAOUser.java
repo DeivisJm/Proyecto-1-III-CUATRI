@@ -20,17 +20,16 @@ public class DAOUser {
     public void createUser(User user) {
 
         DBConnection db = new DBConnection();
-        String consultaSQL = "INSERT INTO user (id, name, first_name, second_name, email, password, entity_id, rol_id) VALUES (?, ?, ?, ?, ?, ?, ?,? )";
+        String consultaSQL = "INSERT INTO users ( name, first_name, second_name, email, password, entity_id, rol_id) VALUES ( ?, ?, ?, ?, ?, ?,? )";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
-            ps.setInt(1, user.getId());
-            ps.setString(2, user.getName());
-            ps.setString(3, user.getFirst_lastname());
-            ps.setString(4, user.getSecond_lastname());
-            ps.setString(5, user.getEmail());
-            ps.setString(6, user.getPassword());
-            ps.setInt(7, user.getEntity_id());
-            ps.setInt(8, user.getRol_id());
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getFirst_lastname());
+            ps.setString(3, user.getSecond_lastname());
+            ps.setString(4, user.getEmail());
+            ps.setString(5, user.getPassword());
+            ps.setInt(6, user.getEntity_id());
+            ps.setInt(7, user.getRol_id());
 
             ps.execute();
             JOptionPane.showMessageDialog(null, "Se agrego correctamente el usuario");
@@ -45,7 +44,7 @@ public class DAOUser {
 
         DBConnection db = new DBConnection();
         List<User> user = new ArrayList<>();
-        String sql = "SELECT * FROM user";
+        String sql = "SELECT * FROM users";
 
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(sql);
@@ -74,18 +73,19 @@ public class DAOUser {
 
         DBConnection db = new DBConnection();
 
-        String consultaSQL = "UPDATE user SET id=?, name=?, first_lastname=?, second_lastname=?, email=?, password=?, entity_id=?, rol_id=? WHERE id=?";
+        String consultaSQL = "UPDATE users SET name=?, first_lastname=?, second_lastname=?, email=?, password=?, entity_id=?, rol_id=? WHERE id=?";
 
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
-            ps.setInt(1, user.getId());
-            ps.setString(2, user.getName());
-            ps.setString(3, user.getFirst_lastname());
-            ps.setString(4, user.getSecond_lastname());
-            ps.setString(5, user.getEmail());
-            ps.setString(6, user.getPassword());
-            ps.setInt(7, user.getEntity_id());
-            ps.setInt(8, user.getRol_id());
+            
+           ps.setString(1, user.getName());
+            ps.setString(2, user.getFirst_lastname());
+            ps.setString(3, user.getSecond_lastname());
+            ps.setString(4, user.getEmail());
+            ps.setString(5, user.getPassword());
+            ps.setInt(6, user.getEntity_id());
+            ps.setInt(7, user.getRol_id());
+            ps.setInt(8, user.getId());
             ps.execute();
             JOptionPane.showMessageDialog(null, "La modificación fue Exitosa");
 
@@ -94,14 +94,13 @@ public class DAOUser {
         } finally {
             db.disconnect();
         }
-
     }
 
     public void deleteUser(int id) {
 
         DBConnection db = new DBConnection();
 
-        String consultaSQL = "DELETE FROM user WHERE id=?";
+        String consultaSQL = "DELETE FROM users WHERE id=?";
 
         try {
             PreparedStatement preparedStatement = db.getConnection().prepareStatement(consultaSQL);

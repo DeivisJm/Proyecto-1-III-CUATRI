@@ -9,7 +9,6 @@ import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import Model.DAOEntity;
 import Model.Entity;
-import javax.swing.JComboBox;
 
 /**
  *
@@ -33,23 +32,6 @@ public class CtrlEntity {
                 entity.getDescription()};
             model.addRow(row);
         }
-    }
-
-    public void addEntity(JTextField txtidnumberent, JTextField txtnameen, JTextField txtemailen, JTextField txtcelen, JTextField txtadressen, JTextField txtdescripen) {
-        this.dao.createEntity(new Entity(txtidnumberent.getText(), txtnameen.getText(), txtemailen.getText(), txtcelen.getText(), txtadressen.getText(), txtdescripen.getText()));
-    }
-
-    public void clearFields(JTextField txtidnumberent, JTextField txtnameen, JTextField txtemailen, JTextField txtcelen, JTextField txtadressen, JTextField txtdescripen) {
-        txtidnumberent.setText("");
-        txtnameen.setText("");
-        txtemailen.setText("");
-        txtcelen.setText("");
-        txtadressen.setText("");
-        txtdescripen.setText("");
-    }
-
-    public void updateEntity(JTextField txtidnumberent, JTextField txtnameen, JTextField txtemailen, JTextField txtcelen, JTextField txtadressen, JTextField txtdescripen) {
-        this.dao.updateEntity(new Entity(id, txtidnumberent.getText(), txtnameen.getText(), txtemailen.getText(), txtcelen.getText(), txtadressen.getText(), txtdescripen.getText()));
     }
 
     public void deleteEntity() {
