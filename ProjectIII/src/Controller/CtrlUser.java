@@ -1,16 +1,15 @@
 package Controller;
 
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import Model.DAOUser;
-import Model.User;
-import javax.swing.JComboBox;
-
+import Model.*;
 /**
  *
  * @author deivi

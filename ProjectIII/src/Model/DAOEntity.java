@@ -20,7 +20,7 @@ public class DAOEntity {
     public void createEntity(Entity entity) {
 
         DBConnection db = new DBConnection();
-        String consultaSQL = "INSERT INTO user (id, id_number, name, email, celphone, adress, description) VALUES (?, ?, ?, ?, ?, ?, ? )";
+        String consultaSQL = "INSERT INTO entities (id_number, name, email, celphone, adress, description) VALUES (?, ?, ?, ?, ?, ?, ? )";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
             ps.setInt(1, entity.getId());

@@ -1,12 +1,12 @@
 package Model;
 
-import java.util.ArrayList;
-import java.util.List;
+import model.DBConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
-import model.DBConnection;
 
 /**
  *
@@ -30,11 +30,10 @@ public class DAOUser {
             ps.setString(5, user.getPassword());
             ps.setInt(6, user.getEntity_id());
             ps.setInt(7, user.getRol_id());
-
             ps.execute();
-            JOptionPane.showMessageDialog(null, "Se agrego correctamente el usuario");
+            JOptionPane.showMessageDialog(null, "Se insertó correctamente el usuario");
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "No Se agrego correctamente el estudiante, error: " + e.toString());
+            JOptionPane.showMessageDialog(null, "No se insertó correctamente el usuario, error: " + e.toString());
         } finally {
             db.disconnect();
         }
@@ -43,7 +42,7 @@ public class DAOUser {
     public List<User> readUser() {
 
         DBConnection db = new DBConnection();
-        List<User> user = new ArrayList<>();
+        List<User> users = new ArrayList<>();
         String sql = "SELECT * FROM users";
 
         try {
@@ -59,14 +58,14 @@ public class DAOUser {
                 int entity_id = resultSet.getInt("entity_id");
                 int rol_id = resultSet.getInt("rol_id");
 
-                user.add(new User(id, name, first_lastname, second_lastname, email, password, entity_id, rol_id));
+                users.add(new User(id, name, first_lastname, second_lastname, email, password, entity_id, rol_id));
             }
         } catch (SQLException e) {
             System.err.println("Error: " + e.getMessage());
         } finally {
             db.disconnect();
         }
-        return user;
+        return users;
     }
 
     public void updateUser(User user) {
@@ -77,8 +76,7 @@ public class DAOUser {
 
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
-            
-           ps.setString(1, user.getName());
+            ps.setString(1, user.getName());
             ps.setString(2, user.getFirst_lastname());
             ps.setString(3, user.getSecond_lastname());
             ps.setString(4, user.getEmail());
