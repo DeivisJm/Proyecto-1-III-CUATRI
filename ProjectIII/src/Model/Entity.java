@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
 /**
  *
- * @author deivi
+ * @author deivis
  */
 public class Entity {
 
@@ -15,28 +12,28 @@ public class Entity {
     private String name;
     private String email;
     private int celphone;
-    private String adress;
+    private String address;
     private String description;
 
     public Entity() {
     }
 
-    public Entity(int id, int id_number, String name, String email, int celphone, String adress, String description) {
+    public Entity(int id, int id_number, String name, String email, int celphone, String address, String description) {
         this.id = id;
         this.id_number = id_number;
         this.name = name;
         this.email = email;
         this.celphone = celphone;
-        this.adress = adress;
+        this.address = address;
         this.description = description;
     }
 
-    public Entity(int id_number, String name, String email, int celphone, String adress, String description) {
+    public Entity(int id_number, String name, String email, int celphone, String address, String description) {
         this.id_number = id_number;
         this.name = name;
         this.email = email;
         this.celphone = celphone;
-        this.adress = adress;
+        this.address = address;
         this.description = description;
     }
 
@@ -111,17 +108,17 @@ public class Entity {
     }
 
     /**
-     * @return the adress
+     * @return the address
      */
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     /**
-     * @param adress the adress to set
+     * @param address the address to set
      */
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     /**

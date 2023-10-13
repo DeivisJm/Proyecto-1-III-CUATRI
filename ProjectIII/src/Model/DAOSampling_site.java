@@ -1,20 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
 
+import model.DBConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import model.DBConnection;
 
 /**
  *
- * @author deivi
+ * @author deivis
  */
 public class DAOSampling_site {
 
@@ -24,15 +20,14 @@ public class DAOSampling_site {
     public void createSampling_site(Sampling_site sampling_site) {
 
         DBConnection db = new DBConnection();
-        String consultaSQL = "INSERT INTO sampling_site (id, name, province_id, canton_id, district_id, entity_id) VALUES (?, ?, ?, ?, ?, ? )";
+        String consultaSQL = "INSERT INTO sampling_sites ( name, province_id, canton_id, district_id, entity_id) VALUES (?, ?, ?, ?, ? )";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
-            ps.setInt(1, sampling_site.getId());
-            ps.setString(2, sampling_site.getName());
-            ps.setInt(3, sampling_site.getProvince_id());
-            ps.setInt(4, sampling_site.getCanton_id());
-            ps.setInt(5, sampling_site.getDistrict_id());
-            ps.setInt(6, sampling_site.getEntity_id());
+            ps.setString(1, sampling_site.getName());
+            ps.setInt(2, sampling_site.getProvince_id());
+            ps.setInt(3, sampling_site.getCanton_id());
+            ps.setInt(4, sampling_site.getDistrict_id());
+            ps.setInt(5, sampling_site.getEntity_id());
             ps.execute();
             JOptionPane.showMessageDialog(null, "Se agrego correctamente el Sitio de Muestreo");
         } catch (SQLException e) {
@@ -46,7 +41,7 @@ public class DAOSampling_site {
 
         DBConnection db = new DBConnection();
         List<Sampling_site> sampling_site = new ArrayList<>();
-        String sql = "SELECT * FROM sampling_site";
+        String sql = "SELECT * FROM sampling_sites";
 
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(sql);
@@ -73,16 +68,14 @@ public class DAOSampling_site {
 
         DBConnection db = new DBConnection();
 
-        String consultaSQL = "UPDATE sampling_site SET id=?, name=?, province_id=?, canton_id=?, district_id=?, entity_id=?,  WHERE id=?";
+        String consultaSQL = "UPDATE sampling_site SET name=?, province_id=?, canton_id=?, district_id=?, entity_id=?,  WHERE id=?";
 
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
-            ps.setInt(1, sampling_site.getId());
-            ps.setString(2, sampling_site.getName());
-            ps.setInt(3, sampling_site.getProvince_id());
-            ps.setInt(4, sampling_site.getCanton_id());
-            ps.setInt(5, sampling_site.getDistrict_id());
-            ps.setInt(6, sampling_site.getEntity_id());
+            ps.setInt(2, sampling_site.getProvince_id());
+            ps.setInt(3, sampling_site.getCanton_id());
+            ps.setInt(4, sampling_site.getDistrict_id());
+            ps.setInt(5, sampling_site.getEntity_id());
             ps.execute();
             JOptionPane.showMessageDialog(null, "La modificación fue Exitosa");
 
@@ -98,7 +91,7 @@ public class DAOSampling_site {
 
         DBConnection db = new DBConnection();
 
-        String consultaSQL = "DELETE FROM sampling_site WHERE id=?";
+        String consultaSQL = "DELETE FROM sampling_sites WHERE id=?";
 
         try {
             PreparedStatement preparedStatement = db.getConnection().prepareStatement(consultaSQL);

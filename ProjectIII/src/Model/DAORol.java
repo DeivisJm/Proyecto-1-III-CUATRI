@@ -1,47 +1,45 @@
 package Model;
 
-import java.util.ArrayList;
-import java.util.List;
+import model.DBConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import model.DBConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @author deivis
+ * @author svalv
  */
-public class DAODistrict {
+public class DAORol {
 
-    public DAODistrict() {
+    public DAORol() {
     }
 
-    public List<District> readDistrict() {
+    public List<Rol> readRoles() {
         DBConnection db = new DBConnection();
-        List<District> districties = new ArrayList<>();
-        String sql = "SELECT * from districties";
+        List<Rol> roles = new ArrayList<>();
+        String sql = "SELECT * from roles";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                int canton_id = resultSet.getInt("canton_id");
-                districties.add(new District(id, name, canton_id));
+                roles.add(new Rol(id, name));
             }
         } catch (SQLException e) {
             System.err.println("Error: " + e.getMessage());
         } finally {
             db.disconnect();
         }
-        return districties;
+        return roles;
     }
 
-    public int getIDDistrict(String name) {
+    public int getIDRol(String name) {
         int value = 0;
         DBConnection db = new DBConnection();
-        String sql = "SELECT id FROM districties WHERE name = ?";
+        String sql = "SELECT id FROM roles WHERE name = ?";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(sql);
             ps.setString(1, name);
@@ -57,10 +55,10 @@ public class DAODistrict {
         return value;
     }
 
-    public String getNameDistrict(int id) {
+    public String getNameRol(int id) {
         String value = "";
         DBConnection db = new DBConnection();
-        String sql = "SELECT name FROM districties WHERE id = ?";
+        String sql = "SELECT name FROM roles WHERE id = ?";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(sql);
             ps.setInt(1, id);
@@ -75,23 +73,4 @@ public class DAODistrict {
         }
         return value;
     }
-      public int getIDCanton(String name) {
-        int value = 0;
-        DBConnection db = new DBConnection();
-        String sql = "SELECT id FROM districties WHERE name = ?";
-        try {
-            PreparedStatement ps = db.getConnection().prepareStatement(sql);
-            ps.setString(1, name);
-            ResultSet resultSet = ps.executeQuery();
-            if (resultSet.next()) {
-                value = resultSet.getInt("canton_id");
-            }
-        } catch (SQLException e) {
-            System.err.println("Error: " + e.getMessage());
-        } finally {
-            db.disconnect();
-        }
-        return value;
-    }
-
 }

@@ -2,26 +2,26 @@ package Model;
 
 /**
  *
- * @author deivi
+ * @author deivis
  */
-public class District {
+public class Canton {
 
     private int id;
     private String name;
-    private int canton_id;
+    private int province_id;
 
-    public District() {
+    public Canton() {
     }
 
-    public District(int id, String name, int canton_id) {
+    public Canton(int id, String name, int province_id) {
         this.id = id;
         this.name = name;
-        this.canton_id = canton_id;
+        this.province_id = province_id;
     }
 
-    public District(String name, int canton_id) {
+    public Canton(String name, int province_id) {
         this.name = name;
-        this.canton_id = canton_id;
+        this.province_id = province_id;
     }
 
     /**
@@ -53,17 +53,17 @@ public class District {
     }
 
     /**
-     * @return the canton_id
+     * @return the province_id
      */
-    public int getCanton_id() {
-        return canton_id;
+    public int getProvince_id() {
+        return province_id;
     }
 
     /**
-     * @param canton_id the canton_id to set
+     * @param province_id the province_id to set
      */
-    public void setCanton_id(int canton_id) {
-        this.canton_id = canton_id;
+    public void setProvince_id(int province_id) {
+        this.province_id = province_id;
     }
 
 }

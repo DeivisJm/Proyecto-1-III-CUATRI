@@ -2,26 +2,23 @@ package Model;
 
 /**
  *
- * @author deivi
+ * @author deivis
  */
-public class District {
+public class Province {
 
     private int id;
     private String name;
-    private int canton_id;
 
-    public District() {
+    public Province() {
     }
 
-    public District(int id, String name, int canton_id) {
+    public Province(int id, String name) {
         this.id = id;
         this.name = name;
-        this.canton_id = canton_id;
     }
 
-    public District(String name, int canton_id) {
+    public Province(String name) {
         this.name = name;
-        this.canton_id = canton_id;
     }
 
     /**
@@ -50,20 +47,6 @@ public class District {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * @return the canton_id
-     */
-    public int getCanton_id() {
-        return canton_id;
-    }
-
-    /**
-     * @param canton_id the canton_id to set
-     */
-    public void setCanton_id(int canton_id) {
-        this.canton_id = canton_id;
     }
 
 }
