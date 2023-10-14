@@ -39,7 +39,7 @@ public class CtrlSampling_site {
             String districtName = daoDistrict.getNameDistrict(sampling_site.getDistrict_id());
             String entityName = daoentity.nameEntity(sampling_site.getEntity_id());
 
-            Object[] row = {sampling_site.getName(), provinceName, cantonName, districtName, entityName};
+            Object[] row = {sampling_site.getId(), sampling_site.getName(), provinceName, cantonName, districtName, entityName};
             model.addRow(row);
         }
     }
