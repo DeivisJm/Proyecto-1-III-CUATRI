@@ -12,7 +12,7 @@ public class Login extends javax.swing.JFrame {
         // Verify the password 
         if (enteredPassword.equals("superadmin")) {
             // The password is correct, so display the admin JFrame
-            Administrator adminFrame = new Administrator();
+            SuperAdmin adminFrame = new SuperAdmin();
             adminFrame.setVisible(true);
         } else {
             // The password is incorrect, you can display an error message or perform some other action

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author svalv
+ * @author fabri
  */
 public class DAORol {
 

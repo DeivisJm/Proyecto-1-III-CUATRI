@@ -2,14 +2,14 @@ package View;
 
 import Controller.*;
 
-public class Administrator extends javax.swing.JFrame {
+public class SuperAdmin extends javax.swing.JFrame {
 
     CtrlUser cu = new CtrlUser();
     CtrlEntity ce = new CtrlEntity();
     CtrlSampling_site cs = new CtrlSampling_site();
     CtrlNascent cn = new CtrlNascent();
 
-    public Administrator() {
+    public SuperAdmin() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -593,7 +593,7 @@ public class Administrator extends javax.swing.JFrame {
         jLabel16.setText("Nombre:");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel18.setText("Provinvia:");
+        jLabel18.setText("Provincia:");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel19.setText("Distrito:");

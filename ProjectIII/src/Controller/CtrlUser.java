@@ -13,7 +13,7 @@ import Model.*;
 
 /**
  *
- * @author deivis
+ * @author fabri
  */
 public class CtrlUser {
 

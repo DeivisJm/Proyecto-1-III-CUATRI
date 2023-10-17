@@ -48,13 +48,14 @@ public class DAOEntity {
             PreparedStatement ps = db.getConnection().prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
+                int id = resultSet.getInt("id");
                 int id_number = resultSet.getInt("id_number");
                 String name = resultSet.getString("name");
                 String email = resultSet.getString("email");
                 int celphone = resultSet.getInt("celphone");
                 String adress = resultSet.getString("address");
                 String description = resultSet.getString("description");
-                entity.add(new Entity(id_number, name, email, celphone, adress, description));
+                entity.add(new Entity(id,id_number, name, email, celphone, adress, description));
             }
         } catch (SQLException e) {
             System.err.println("Error: " + e.getMessage());
