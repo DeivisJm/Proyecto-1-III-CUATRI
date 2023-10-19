@@ -1,6 +1,7 @@
 package View;
 
 import Controller.*;
+import Model.Validations;
 
 public class SuperAdmin extends javax.swing.JFrame {
 
@@ -45,6 +46,7 @@ public class SuperAdmin extends javax.swing.JFrame {
     private void loadDataSampling_site() {
         this.cs.loadDataSamplingSite(tblSampling_site);
     }
+
     private void loadDataNascent() {
         this.cn.loadDataNascent(tblnascent);
     }
@@ -178,6 +180,13 @@ public class SuperAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTabbedPane1.setBackground(new java.awt.Color(153, 153, 255));
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
+        tblentities.setBackground(new java.awt.Color(102, 102, 102));
+        tblentities.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        tblentities.setForeground(new java.awt.Color(255, 255, 255));
         tblentities.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -210,25 +219,38 @@ public class SuperAdmin extends javax.swing.JFrame {
             tblentities.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingresar Datos"));
+        jPanel7.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingresar Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Cedula Juridica:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Telefono:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Email:");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Direccion:");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Descripcion:");
+
+        txtidnumberentity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtidnumberentityActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -239,28 +261,24 @@ public class SuperAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtidnumberentity, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-                            .addComponent(txtnameentity)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(72, 72, 72)
-                        .addComponent(txtemailentity, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(51, 51, 51)
-                        .addComponent(txtcelphone))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6))
-                        .addGap(32, 32, 32)
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtaddressentity)
-                            .addComponent(txtdescriptionentity))))
+                            .addComponent(txtaddressentity, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+                            .addComponent(txtdescriptionentity)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtcelphone)
+                            .addComponent(txtemailentity)
+                            .addComponent(txtnameentity)
+                            .addComponent(txtidnumberentity))))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -293,10 +311,17 @@ public class SuperAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Agregar"));
+        jPanel8.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Botones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
+        jButton1.setBackground(new java.awt.Color(255, 153, 51));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Editar");
 
+        addentities.setBackground(new java.awt.Color(0, 102, 0));
+        addentities.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addentities.setForeground(new java.awt.Color(255, 255, 255));
         addentities.setText("Agregar");
         addentities.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -304,6 +329,9 @@ public class SuperAdmin extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(204, 0, 51));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,6 +339,9 @@ public class SuperAdmin extends javax.swing.JFrame {
             }
         });
 
+        jButton16.setBackground(new java.awt.Color(0, 51, 153));
+        jButton16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setText("Actualizar");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -318,26 +349,26 @@ public class SuperAdmin extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addentities, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addentities, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(addentities)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -366,7 +397,7 @@ public class SuperAdmin extends javax.swing.JFrame {
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Entidades", jPanel2);
@@ -1291,7 +1322,26 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_tblentitiesMouseClicked
 
     private void addentitiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addentitiesActionPerformed
-        // TODO add your handling code here:
+        String idNumber = txtidnumberentity.getText();
+        String name = txtnameentity.getText();
+        String email = txtemailentity.getText();
+        String phoneNumber = txtcelphone.getText();
+        String address = txtaddressentity.getText();
+        String description = txtdescriptionentity.getText();
+
+        // Validar los campos
+        boolean isIdNumberValid = Validations.validateIdNumber(idNumber);
+        boolean isNameValid = Validations.validateName(name);
+        boolean isEmailValid = Validations.validateEmail(email);
+        boolean isPhoneNumberValid = Validations.validatePhoneNumber(phoneNumber);
+        boolean isAddressValid = Validations.validateAddress(address);
+        boolean isDescriptionValid = Validations.validateDescription(description);
+
+        // Si todos los campos son válidos, procede con la acción deseada
+        if (isIdNumberValid && isNameValid && isEmailValid && isPhoneNumberValid && isAddressValid && isDescriptionValid) {
+            // Realiza la acción deseada
+            // ...
+        }
         this.ce.addEntities(tblentities, txtidnumberentity, txtnameentity, txtemailentity, txtcelphone, txtaddressentity, txtdescriptionentity);
         this.ce.clearEntities(txtidnumberentity, txtnameentity, txtemailentity, txtcelphone, txtaddressentity, txtdescriptionentity);
     }//GEN-LAST:event_addentitiesActionPerformed
@@ -1317,6 +1367,10 @@ public class SuperAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.cn.selectedRowNascent(tblnascent, txtnamenascent, txtaddressnascent, txtlatitudenascent, txtlengthnascent, txtdescriptionnascent, cbxProvince, cbxCanton, cbxDistrict, cbxentity);
     }//GEN-LAST:event_tblnascentMouseClicked
+
+    private void txtidnumberentityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidnumberentityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidnumberentityActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
