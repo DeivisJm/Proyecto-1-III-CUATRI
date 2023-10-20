@@ -1047,6 +1047,11 @@ public class SuperAdmin extends javax.swing.JFrame {
         cbxentityid.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cbxrolid.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxrolid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxrolidActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1200,6 +1205,15 @@ public class SuperAdmin extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tbluser.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tbluserAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         tbluser.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1412,6 +1426,14 @@ public class SuperAdmin extends javax.swing.JFrame {
     private void tblentitiesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblentitiesAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_tblentitiesAncestorAdded
+
+    private void tbluserAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tbluserAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbluserAncestorAdded
+
+    private void cbxrolidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxrolidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxrolidActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
