@@ -26,6 +26,16 @@ public class Login extends javax.swing.JFrame {
             // The password is correct, so display the admin JFrame
             Digitizer DigitizerFrame = new Digitizer();
             DigitizerFrame.setVisible(true);
+        }
+    }
+    
+       public void Ingresaradmin() {
+        String enteredPassword = Txtpassword.getText();
+        // Verify the password 
+        if (enteredPassword.equals("admin")) {
+            // The password is correct, so display the admin JFrame
+            Admin AdminFrame = new Admin();
+            AdminFrame.setVisible(true);
         } else {
             // The password is incorrect, you can display an error message or perform some other action
             JOptionPane.showMessageDialog(this, "Contraseña Incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
@@ -222,6 +232,7 @@ public class Login extends javax.swing.JFrame {
         // Get the entered username and password from text fields
         this.Ingresarsuperadmin();
         this.IngresarDigitador();
+        this.Ingresaradmin();
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void TxtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtpasswordActionPerformed
