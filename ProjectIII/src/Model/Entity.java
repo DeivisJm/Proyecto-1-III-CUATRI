@@ -1,4 +1,3 @@
-
 package Model;
 
 /**
@@ -8,7 +7,7 @@ package Model;
 public class Entity {
 
     private int id;
-    private int id_number;
+    private int legal_id;
     private String name;
     private String email;
     private int celphone;
@@ -18,9 +17,9 @@ public class Entity {
     public Entity() {
     }
 
-    public Entity(int id, int id_number, String name, String email, int celphone, String address, String description) {
+    public Entity(int id, int legal_id, String name, String email, int celphone, String address, String description) {
         this.id = id;
-        this.id_number = id_number;
+        this.legal_id = legal_id;
         this.name = name;
         this.email = email;
         this.celphone = celphone;
@@ -28,8 +27,8 @@ public class Entity {
         this.description = description;
     }
 
-    public Entity(int id_number, String name, String email, int celphone, String address, String description) {
-        this.id_number = id_number;
+    public Entity(int legal_id, String name, String email, int celphone, String address, String description) {
+        this.legal_id = legal_id;
         this.name = name;
         this.email = email;
         this.celphone = celphone;
@@ -52,17 +51,17 @@ public class Entity {
     }
 
     /**
-     * @return the id_number
+     * @return the legal_id
      */
-    public int getId_number() {
-        return id_number;
+    public int getLegal_id() {
+        return legal_id;
     }
 
     /**
-     * @param id_number the id_number to set
+     * @param legal_id the legal_id to set
      */
-    public void setId_number(int id_number) {
-        this.id_number = id_number;
+    public void setLegal_id(int legal_id) {
+        this.legal_id = legal_id;
     }
 
     /**
@@ -134,5 +133,4 @@ public class Entity {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }

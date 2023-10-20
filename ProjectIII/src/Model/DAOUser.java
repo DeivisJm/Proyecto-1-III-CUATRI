@@ -20,7 +20,7 @@ public class DAOUser {
     public void createUser(User user) {
 
         DBConnection db = new DBConnection();
-        String consultaSQL = "INSERT INTO users ( name, first_name, second_name, email, password, entity_id, rol_id) VALUES ( ?, ?, ?, ?, ?, ?,? )";
+        String consultaSQL = "INSERT INTO users ( name, first_name, second_name, email, password, entity_id, role_id) VALUES ( ?, ?, ?, ?, ?, ?,? )";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
             ps.setString(1, user.getName());
@@ -51,12 +51,12 @@ public class DAOUser {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                String first_lastname = resultSet.getString("first_lastname");
-                String second_lastname = resultSet.getString("second_lastname");
+                String first_lastname = resultSet.getString("first_name");
+                String second_lastname = resultSet.getString("second_name");
                 String email = resultSet.getString("email");
                 String password = resultSet.getString("password");
                 int entity_id = resultSet.getInt("entity_id");
-                int rol_id = resultSet.getInt("rol_id");
+                int rol_id = resultSet.getInt("role_id");
 
                 users.add(new User(id, name, first_lastname, second_lastname, email, password, entity_id, rol_id));
             }
@@ -72,7 +72,7 @@ public class DAOUser {
 
         DBConnection db = new DBConnection();
 
-        String consultaSQL = "UPDATE users SET name=?, first_lastname=?, second_lastname=?, email=?, password=?, entity_id=?, rol_id=? WHERE id=?";
+        String consultaSQL = "UPDATE users SET name=?, first_name=?, second_name=?, email=?, password=?, entity_id=?, role_id=? WHERE id=?";
 
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);

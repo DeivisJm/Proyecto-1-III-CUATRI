@@ -3,7 +3,6 @@ package Controller;
 import Model.DAOEntity;
 import Model.Entity;
 import java.util.List;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -13,7 +12,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author deivis
+ * @author fabri
  */
 public class CtrlEntity {
 
@@ -29,7 +28,7 @@ public class CtrlEntity {
 
         for (Entity entities : entity) {
             id = entities.getId();
-            Object[] row = {entities.getId(), entities.getId_number(), entities.getName(), entities.getEmail(), entities.getCelphone(), entities.getAddress(), entities.getDescription()};
+            Object[] row = {entities.getId(), entities.getLegal_id(), entities.getName(), entities.getEmail(), entities.getCelphone(), entities.getAddress(), entities.getDescription()};
             model.addRow(row);
         }
     }
@@ -39,7 +38,7 @@ public class CtrlEntity {
     }
 
     public void updatedEntities(JTextField txtidnumberentity, JTextField txtnameentity, JTextField txtemailentity, JTextField txtcelphone, JTextField txtaddressentity, JTextField txtdescriptionentity) {
-        this.daoentity.updateEntity(new Entity(Integer.parseInt(txtidnumberentity.getText()), txtnameentity.getText(), txtemailentity.getText(), Integer.parseInt(txtcelphone.getText()), txtaddressentity.getText(), txtdescriptionentity.getText()));
+        this.daoentity.updateEntity(new Entity(this.id, Integer.parseInt(txtidnumberentity.getText()), txtnameentity.getText(), txtemailentity.getText(), Integer.parseInt(txtcelphone.getText()), txtaddressentity.getText(), txtdescriptionentity.getText()));
     }
 
     public void deleteEntities() {
