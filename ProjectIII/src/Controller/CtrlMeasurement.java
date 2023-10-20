@@ -97,4 +97,8 @@ public void loadDataMeasurement(JTable tblCaudal) {
         txtaddressentity.setText("");
         txtdescriptionentity.setText("");
     }
+
+    public void selectedRowMeasurement(JTable tblCaudal) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

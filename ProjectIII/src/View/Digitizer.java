@@ -30,7 +30,7 @@ public class Digitizer extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCaudal = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -53,8 +53,8 @@ public class Digitizer extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
 
-        jTable1.setBackground(new java.awt.Color(153, 153, 153));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCaudal.setBackground(new java.awt.Color(153, 153, 153));
+        tblCaudal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -62,7 +62,16 @@ public class Digitizer extends javax.swing.JFrame {
                 "ID", "Capacidad", "Metodo", "Observación", "Fecha", "Clima", "Naciente", "Sitio_Muestreo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tblCaudal.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tblCaudalAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane1.setViewportView(tblCaudal);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -246,6 +255,10 @@ public class Digitizer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void tblCaudalAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblCaudalAncestorAdded
+
+    }//GEN-LAST:event_tblCaudalAncestorAdded
+
     /**
      * @param args the command line arguments
      */
@@ -294,10 +307,10 @@ public class Digitizer extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTable tblCaudal;
     // End of variables declaration//GEN-END:variables
 }

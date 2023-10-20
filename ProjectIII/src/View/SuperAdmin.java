@@ -352,6 +352,15 @@ public class SuperAdmin extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblentities.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tblentitiesAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         tblentities.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblentitiesMouseClicked(evt);
@@ -1399,6 +1408,10 @@ public class SuperAdmin extends javax.swing.JFrame {
         this.clear();
         this.cm.loadDataMeasurement(tblCaudal);
     }//GEN-LAST:event_BtnEliminarActionPerformed
+
+    private void tblentitiesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblentitiesAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblentitiesAncestorAdded
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

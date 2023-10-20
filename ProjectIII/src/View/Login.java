@@ -9,38 +9,28 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-    public void Ingresarsuperadmin() {
-        String enteredPassword = Txtpassword.getText();
-        // Verify the password 
-        if (enteredPassword.equals("superadmin")) {
-            // The password is correct, so display the admin JFrame
-            SuperAdmin adminFrame = new SuperAdmin();
-            adminFrame.setVisible(true);
-        }
-    }
-
-    public void IngresarDigitador() {
-        String enteredPassword = Txtpassword.getText();
-        // Verify the password 
-        if (enteredPassword.equals("Digitador")) {
-            // The password is correct, so display the admin JFrame
-            Digitizer DigitizerFrame = new Digitizer();
-            DigitizerFrame.setVisible(true);
-        }
-    }
+public void Ingresar() {
+    String enteredPassword = Txtpassword.getText();
     
-       public void Ingresaradmin() {
-        String enteredPassword = Txtpassword.getText();
-        // Verify the password 
-        if (enteredPassword.equals("admin")) {
-            // The password is correct, so display the admin JFrame
-            Admin AdminFrame = new Admin();
-            AdminFrame.setVisible(true);
-        } else {
-            // The password is incorrect, you can display an error message or perform some other action
-            JOptionPane.showMessageDialog(this, "Contraseña Incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+    if (enteredPassword.equals("superadmin")) {
+        // La contraseña es correcta, muestra la ventana del SuperAdmin
+        SuperAdmin adminFrame = new SuperAdmin();
+        adminFrame.setVisible(true);
+    } else if (enteredPassword.equals("Digitador")) {
+        // La contraseña es correcta, muestra la ventana del Digitador
+        Digitizer DigitizerFrame = new Digitizer();
+        DigitizerFrame.setVisible(true);
+    } else if (enteredPassword.equals("admin")) {
+        // La contraseña es correcta, muestra la ventana del Admin
+        Admin AdminFrame = new Admin();
+        AdminFrame.setVisible(true);
+    } else {
+        // Ninguna contraseña válida ingresada, muestra un mensaje de error
+        JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
     }
+}
+
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -230,9 +220,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // Get the entered username and password from text fields
-        this.Ingresarsuperadmin();
-        this.IngresarDigitador();
-        this.Ingresaradmin();
+        this.Ingresar();
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void TxtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtpasswordActionPerformed
