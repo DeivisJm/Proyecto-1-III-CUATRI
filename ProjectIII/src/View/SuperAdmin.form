@@ -1343,15 +1343,15 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="txtMethod" max="32767" attributes="0"/>
-                                              <Component id="txtDate" alignment="0" pref="278" max="32767" attributes="0"/>
-                                              <Component id="txtObsevation" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtMethod4" max="32767" attributes="0"/>
+                                              <Component id="txtDate4" alignment="0" pref="278" max="32767" attributes="0"/>
+                                              <Component id="txtObsevation4" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
                                           <Component id="jLabel35" min="-2" pref="108" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="txtCapacity" min="-2" pref="278" max="-2" attributes="0"/>
+                                          <Component id="txtCapacity4" min="-2" pref="278" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                           <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -1363,8 +1363,8 @@
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="txtRealizado" alignment="0" pref="278" max="32767" attributes="0"/>
-                                  <Component id="txtClima" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtRealizado4" alignment="0" pref="278" max="32767" attributes="0"/>
+                                  <Component id="txtClima4" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1376,36 +1376,36 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCapacity" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCapacity4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox11" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtMethod" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtMethod4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox12" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtObsevation" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtObsevation4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDate4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtClima" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtClima4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtRealizado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtRealizado4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -1453,15 +1453,15 @@
                     <Property name="text" type="java.lang.String" value="Clima:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCapacity">
+                <Component class="javax.swing.JTextField" name="txtCapacity4">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtObsevation">
+                <Component class="javax.swing.JTextField" name="txtObsevation4">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtMethod">
+                <Component class="javax.swing.JTextField" name="txtMethod4">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtDate">
+                <Component class="javax.swing.JTextField" name="txtDate4">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtRealizado">
+                <Component class="javax.swing.JTextField" name="txtRealizado4">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel28">
                   <Properties>
@@ -1471,7 +1471,7 @@
                     <Property name="text" type="java.lang.String" value="Realizado:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtClima">
+                <Component class="javax.swing.JTextField" name="txtClima4">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel34">
                   <Properties>
@@ -1541,9 +1541,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jButton14" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton13" alignment="0" max="32767" attributes="0"/>
-                              <Component id="BtnEliminar" alignment="0" pref="144" max="32767" attributes="0"/>
+                              <Component id="btnAdd4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEdit4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="BtnEliminar4" alignment="0" pref="144" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="16" max="32767" attributes="0"/>
                       </Group>
@@ -1553,18 +1553,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAdd4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEdit4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="BtnEliminar" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtnEliminar4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton13">
+                <Component class="javax.swing.JButton" name="btnEdit4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="99" red="ff" type="rgb"/>
@@ -1578,10 +1578,10 @@
                     <Property name="text" type="java.lang.String" value="Editar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton13ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEdit4ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton14">
+                <Component class="javax.swing.JButton" name="btnAdd4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="66" red="0" type="rgb"/>
@@ -1595,7 +1595,7 @@
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="BtnEliminar">
+                <Component class="javax.swing.JButton" name="BtnEliminar4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="0" red="cc" type="rgb"/>
@@ -1609,7 +1609,7 @@
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEliminarActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEliminar4ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1988,9 +1988,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnadduser" alignment="0" pref="144" max="32767" attributes="0"/>
-                              <Component id="btnedituser" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btndeleteuser" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnAdduser6" alignment="0" pref="144" max="32767" attributes="0"/>
+                              <Component id="btnEdituser6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEliminateuser6" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="24" max="32767" attributes="0"/>
                       </Group>
@@ -2000,18 +2000,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="btnadduser" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAdduser6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnedituser" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEdituser6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btndeleteuser" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEliminateuser6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btnedituser">
+                <Component class="javax.swing.JButton" name="btnEdituser6">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="99" red="ff" type="rgb"/>
@@ -2025,10 +2025,10 @@
                     <Property name="text" type="java.lang.String" value="Editar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnedituserActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEdituser6ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnadduser">
+                <Component class="javax.swing.JButton" name="btnAdduser6">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="66" red="0" type="rgb"/>
@@ -2042,10 +2042,10 @@
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnadduserActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdduser6ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btndeleteuser">
+                <Component class="javax.swing.JButton" name="btnEliminateuser6">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="0" red="cc" type="rgb"/>
@@ -2059,7 +2059,7 @@
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndeleteuserActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminateuser6ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

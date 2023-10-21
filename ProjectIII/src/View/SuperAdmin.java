@@ -138,21 +138,21 @@ public class SuperAdmin extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        txtCapacity = new javax.swing.JTextField();
-        txtObsevation = new javax.swing.JTextField();
-        txtMethod = new javax.swing.JTextField();
-        txtDate = new javax.swing.JTextField();
-        txtRealizado = new javax.swing.JTextField();
+        txtCapacity4 = new javax.swing.JTextField();
+        txtObsevation4 = new javax.swing.JTextField();
+        txtMethod4 = new javax.swing.JTextField();
+        txtDate4 = new javax.swing.JTextField();
+        txtRealizado4 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        txtClima = new javax.swing.JTextField();
+        txtClima4 = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jComboBox11 = new javax.swing.JComboBox<>();
         jComboBox12 = new javax.swing.JComboBox<>();
         jPanel16 = new javax.swing.JPanel();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        BtnEliminar = new javax.swing.JButton();
+        btnEdit4 = new javax.swing.JButton();
+        btnAdd4 = new javax.swing.JButton();
+        BtnEliminar4 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         tblCaudal = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
@@ -173,9 +173,9 @@ public class SuperAdmin extends javax.swing.JFrame {
         cbxentityid = new javax.swing.JComboBox<>();
         cbxrolid = new javax.swing.JComboBox<>();
         jPanel10 = new javax.swing.JPanel();
-        btnedituser = new javax.swing.JButton();
-        btnadduser = new javax.swing.JButton();
-        btndeleteuser = new javax.swing.JButton();
+        btnEdituser6 = new javax.swing.JButton();
+        btnAdduser6 = new javax.swing.JButton();
+        btnEliminateuser6 = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbluser = new javax.swing.JTable();
@@ -865,13 +865,13 @@ public class SuperAdmin extends javax.swing.JFrame {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createSequentialGroup()
                                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtMethod)
-                                    .addComponent(txtDate, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                                    .addComponent(txtObsevation, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(txtMethod4)
+                                    .addComponent(txtDate4, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                                    .addComponent(txtObsevation4, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGap(46, 46, 46)
                                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(txtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCapacity4, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(43, 43, 43)
                                 .addComponent(jLabel34)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -879,8 +879,8 @@ public class SuperAdmin extends javax.swing.JFrame {
                             .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtRealizado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                        .addComponent(txtClima, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addComponent(txtRealizado4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                        .addComponent(txtClima4, javax.swing.GroupLayout.Alignment.LEADING))))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -888,59 +888,59 @@ public class SuperAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(txtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCapacity4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34)
                     .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
-                    .addComponent(txtMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMethod4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35)
                     .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
-                    .addComponent(txtObsevation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtObsevation4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDate4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(txtClima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtClima4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(txtRealizado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRealizado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agregar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
-        jButton13.setBackground(new java.awt.Color(255, 153, 0));
-        jButton13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton13.setForeground(new java.awt.Color(255, 255, 255));
-        jButton13.setText("Editar");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        btnEdit4.setBackground(new java.awt.Color(255, 153, 0));
+        btnEdit4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEdit4.setForeground(new java.awt.Color(255, 255, 255));
+        btnEdit4.setText("Editar");
+        btnEdit4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                btnEdit4ActionPerformed(evt);
             }
         });
 
-        jButton14.setBackground(new java.awt.Color(0, 102, 0));
-        jButton14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(255, 255, 255));
-        jButton14.setText("Agregar");
+        btnAdd4.setBackground(new java.awt.Color(0, 102, 0));
+        btnAdd4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAdd4.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd4.setText("Agregar");
 
-        BtnEliminar.setBackground(new java.awt.Color(204, 0, 51));
-        BtnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        BtnEliminar.setText("Eliminar");
-        BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        BtnEliminar4.setBackground(new java.awt.Color(204, 0, 51));
+        BtnEliminar4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BtnEliminar4.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEliminar4.setText("Eliminar");
+        BtnEliminar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnEliminarActionPerformed(evt);
+                BtnEliminar4ActionPerformed(evt);
             }
         });
 
@@ -951,20 +951,20 @@ public class SuperAdmin extends javax.swing.JFrame {
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                    .addComponent(btnAdd4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEdit4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnEliminar4, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jButton14)
+                .addComponent(btnAdd4)
                 .addGap(30, 30, 30)
-                .addComponent(jButton13)
+                .addComponent(btnEdit4)
                 .addGap(29, 29, 29)
-                .addComponent(BtnEliminar)
+                .addComponent(BtnEliminar4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1150,33 +1150,33 @@ public class SuperAdmin extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agregar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
-        btnedituser.setBackground(new java.awt.Color(255, 153, 0));
-        btnedituser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnedituser.setForeground(new java.awt.Color(255, 255, 255));
-        btnedituser.setText("Editar");
-        btnedituser.addActionListener(new java.awt.event.ActionListener() {
+        btnEdituser6.setBackground(new java.awt.Color(255, 153, 0));
+        btnEdituser6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEdituser6.setForeground(new java.awt.Color(255, 255, 255));
+        btnEdituser6.setText("Editar");
+        btnEdituser6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnedituserActionPerformed(evt);
+                btnEdituser6ActionPerformed(evt);
             }
         });
 
-        btnadduser.setBackground(new java.awt.Color(0, 102, 0));
-        btnadduser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnadduser.setForeground(new java.awt.Color(255, 255, 255));
-        btnadduser.setText("Agregar");
-        btnadduser.addActionListener(new java.awt.event.ActionListener() {
+        btnAdduser6.setBackground(new java.awt.Color(0, 102, 0));
+        btnAdduser6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAdduser6.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdduser6.setText("Agregar");
+        btnAdduser6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnadduserActionPerformed(evt);
+                btnAdduser6ActionPerformed(evt);
             }
         });
 
-        btndeleteuser.setBackground(new java.awt.Color(204, 0, 51));
-        btndeleteuser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btndeleteuser.setForeground(new java.awt.Color(255, 255, 255));
-        btndeleteuser.setText("Eliminar");
-        btndeleteuser.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminateuser6.setBackground(new java.awt.Color(204, 0, 51));
+        btnEliminateuser6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEliminateuser6.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminateuser6.setText("Eliminar");
+        btnEliminateuser6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btndeleteuserActionPerformed(evt);
+                btnEliminateuser6ActionPerformed(evt);
             }
         });
 
@@ -1187,20 +1187,20 @@ public class SuperAdmin extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnadduser, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                    .addComponent(btnedituser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btndeleteuser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAdduser6, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                    .addComponent(btnEdituser6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminateuser6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(btnadduser)
+                .addComponent(btnAdduser6)
                 .addGap(18, 18, 18)
-                .addComponent(btnedituser)
+                .addComponent(btnEdituser6)
                 .addGap(18, 18, 18)
-                .addComponent(btndeleteuser)
+                .addComponent(btnEliminateuser6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1337,20 +1337,20 @@ public class SuperAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnadduserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadduserActionPerformed
+    private void btnAdduser6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdduser6ActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_btnadduserActionPerformed
+    }//GEN-LAST:event_btnAdduser6ActionPerformed
 
-    private void btndeleteuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteuserActionPerformed
+    private void btnEliminateuser6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminateuser6ActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_btndeleteuserActionPerformed
+    }//GEN-LAST:event_btnEliminateuser6ActionPerformed
 
-    private void btnedituserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnedituserActionPerformed
+    private void btnEdituser6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdituser6ActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_btnedituserActionPerformed
+    }//GEN-LAST:event_btnEdituser6ActionPerformed
 
     private void tbluserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbluserMouseClicked
         // TODO add your handling code here:
@@ -1422,20 +1422,20 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEdit1ActionPerformed
 
     private void tblCaudalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCaudalMouseClicked
-       this.cm.selectedRowMeasurement(tblCaudal, txtCapacity, txtMethod, txtObsevation, txtDate, txtClima, txtRealizado);
+       this.cm.selectedRowMeasurement(tblCaudal, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtClima4, txtRealizado4);
     }//GEN-LAST:event_tblCaudalMouseClicked
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-       this.cm.updatedMeasurement(txtidNumberentity1, txtCapacity, txtMethod, txtObsevation, txtDate, txtDate);
+    private void btnEdit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdit4ActionPerformed
+       this.cm.updatedMeasurement(txtidNumberentity1, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4);
        this.clear();
        this.cm.loadDataMeasurement(tblCaudal);
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_btnEdit4ActionPerformed
 
-    private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
+    private void BtnEliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminar4ActionPerformed
         this.cm.deleteM();
         this.clear();
         this.cm.loadDataMeasurement(tblCaudal);
-    }//GEN-LAST:event_BtnEliminarActionPerformed
+    }//GEN-LAST:event_BtnEliminar4ActionPerformed
 
     private void tblentitiesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblentitiesAncestorAdded
         // TODO add your handling code here:
@@ -1471,19 +1471,21 @@ public class SuperAdmin extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnEliminar;
+    private javax.swing.JButton BtnEliminar4;
+    private javax.swing.JButton btnAdd4;
     private javax.swing.JButton btnAddentity1;
     private javax.swing.JButton btnAddsite3;
+    private javax.swing.JButton btnAdduser6;
     private javax.swing.JButton btnAgregar2;
     private javax.swing.JButton btnEdit1;
+    private javax.swing.JButton btnEdit4;
     private javax.swing.JButton btnEditar2;
     private javax.swing.JButton btnEditsite3;
+    private javax.swing.JButton btnEdituser6;
     private javax.swing.JButton btnEliminar2;
     private javax.swing.JButton btnEliminate1;
     private javax.swing.JButton btnEliminate3;
-    private javax.swing.JButton btnadduser;
-    private javax.swing.JButton btndeleteuser;
-    private javax.swing.JButton btnedituser;
+    private javax.swing.JButton btnEliminateuser6;
     private javax.swing.JComboBox<String> cbxCanton2;
     private javax.swing.JComboBox<String> cbxCanton_id3;
     private javax.swing.JComboBox<String> cbxDistrict2;
@@ -1494,8 +1496,6 @@ public class SuperAdmin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxentity2;
     private javax.swing.JComboBox<String> cbxentityid;
     private javax.swing.JComboBox<String> cbxrolid;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox12;
@@ -1565,21 +1565,21 @@ public class SuperAdmin extends javax.swing.JFrame {
     private javax.swing.JTable tbluser;
     private javax.swing.JTextField txtAddressentity1;
     private javax.swing.JTextField txtAddressnascent2;
-    private javax.swing.JTextField txtCapacity;
+    private javax.swing.JTextField txtCapacity4;
     private javax.swing.JTextField txtCelphone1;
-    private javax.swing.JTextField txtClima;
-    private javax.swing.JTextField txtDate;
+    private javax.swing.JTextField txtClima4;
+    private javax.swing.JTextField txtDate4;
     private javax.swing.JTextField txtDescriptionentity1;
     private javax.swing.JTextField txtDescriptionnascent2;
     private javax.swing.JTextField txtEmailentity1;
     private javax.swing.JTextField txtLatitudenascent2;
     private javax.swing.JTextField txtLengthnascent2;
-    private javax.swing.JTextField txtMethod;
+    private javax.swing.JTextField txtMethod4;
     private javax.swing.JTextField txtNameampling_site3;
     private javax.swing.JTextField txtNameentity1;
     private javax.swing.JTextField txtNamenascent2;
-    private javax.swing.JTextField txtObsevation;
-    private javax.swing.JTextField txtRealizado;
+    private javax.swing.JTextField txtObsevation4;
+    private javax.swing.JTextField txtRealizado4;
     private javax.swing.JTextField txtemailuser;
     private javax.swing.JTextField txtfirst_lastname;
     private javax.swing.JTextField txtidNumberentity1;
