@@ -151,4 +151,16 @@ public class CtrlNascent {
         cbxsentity.setModel(model);
     }
 
+    public void loadDataNascent(JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2, JComboBox<String> cbxProvince2, JComboBox<String> cbxCanton2, JComboBox<String> cbxDistrict2, JComboBox<String> cbxentity2) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void loadDataMeasurement(JTable tblNascents) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void addNacents(JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

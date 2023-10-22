@@ -15,6 +15,7 @@ CtrlUser cu = new CtrlUser();
      * Creates new form Digitizer
      */
     public Digitizer() {
+        this.setLocationRelativeTo(null);
         initComponents();
         this.loadDataMeasurent();
     }
