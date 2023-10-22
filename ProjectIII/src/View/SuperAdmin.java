@@ -1,15 +1,31 @@
 package View;
 
 import Controller.*;
+import Model.DAONascent;
+import Model.Nascent;
 import Model.Validations;
+import java.util.Map;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.ui.ApplicationFrame;
+import org.jfree.ui.RefineryUtilities;
+
 
 public class SuperAdmin extends javax.swing.JFrame {
-
+    CtrlReports re = new CtrlReports();
+    
     CtrlUser cu = new CtrlUser();
     CtrlEntity ce = new CtrlEntity();
     CtrlSampling_site cs = new CtrlSampling_site();
     CtrlNascent cn = new CtrlNascent();
     CtrlMeasurement cm = new CtrlMeasurement();
+    DAONascent dao = new DAONascent();
 
     public SuperAdmin() {
         initComponents();
@@ -22,6 +38,7 @@ public class SuperAdmin extends javax.swing.JFrame {
         this.loadDataNascent();
         this.loadDataMeasurent();
         this.setVisible(true);
+        entitys();
     }
 
     private void loadCBX() {
@@ -34,10 +51,14 @@ public class SuperAdmin extends javax.swing.JFrame {
         this.cs.loadDistrict(cbxDistrict3);
         this.cs.loadEntities(cbxEntity3);
         this.cn.loadProvinces(cbxProvince2);
+        this.cn.loadEntities(cbxentity2);
         this.cn.loadCantons(cbxCanton2);
         this.cn.loadDistrict(cbxDistrict2);
-        this.cn.loadEntities(cbxentity2);
 
+    }
+    
+    private void entitys() {
+        this.re.loadEnty(cbxEntity);
     }
 
     private void loadDataUser() {
@@ -167,6 +188,10 @@ public class SuperAdmin extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         tblCaudal = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblDatos = new javax.swing.JTable();
+        btnGraficar = new javax.swing.JButton();
+        cbxEntity = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -437,8 +462,18 @@ public class SuperAdmin extends javax.swing.JFrame {
         jLabel33.setText("Entidad:");
 
         cbxProvince2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxProvince2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxProvince2ItemStateChanged(evt);
+            }
+        });
 
         cbxCanton2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxCanton2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxCanton2ItemStateChanged(evt);
+            }
+        });
 
         cbxDistrict2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -1072,15 +1107,59 @@ public class SuperAdmin extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(0, 153, 153));
 
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(tblDatos);
+
+        btnGraficar.setText("Graficar");
+        btnGraficar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraficarActionPerformed(evt);
+            }
+        });
+
+        cbxEntity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxEntity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxEntityActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1118, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(cbxEntity, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(btnGraficar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 536, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnGraficar)
+                            .addComponent(cbxEntity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Reportes", jPanel6);
@@ -1554,6 +1633,29 @@ public class SuperAdmin extends javax.swing.JFrame {
         this.cs.loadDataSamplingSite(tblSampling_site);
     }//GEN-LAST:event_btnEliminate3ActionPerformed
 
+    private void cbxProvince2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxProvince2ItemStateChanged
+        
+    }//GEN-LAST:event_cbxProvince2ItemStateChanged
+
+    private void cbxCanton2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxCanton2ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxCanton2ItemStateChanged
+
+    private void cbxEntityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEntityActionPerformed
+        String entitySelected = cbxEntity.getSelectedItem().toString();
+        this.re.loadNascentSelected(tblDatos, entitySelected);
+        this.btnGraficar.setEnabled(true);
+    }//GEN-LAST:event_cbxEntityActionPerformed
+
+    private void btnGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarActionPerformed
+          String entityName = cbxEntity.getSelectedItem().toString();
+    Map<String, Nascent> nascentsByEntity = dao.getNascentsByEntity(entityName);
+    
+    if (!nascentsByEntity.isEmpty()) {
+        re.generateBarChart(nascentsByEntity); // Llama al método desde la instancia de CtrlReports
+    }
+    }//GEN-LAST:event_btnGraficarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEliminar4;
@@ -1571,10 +1673,12 @@ public class SuperAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminate1;
     private javax.swing.JButton btnEliminate3;
     private javax.swing.JButton btnEliminateuser6;
+    private javax.swing.JButton btnGraficar;
     private javax.swing.JComboBox<String> cbxCanton2;
     private javax.swing.JComboBox<String> cbxCanton_id3;
     private javax.swing.JComboBox<String> cbxDistrict2;
     private javax.swing.JComboBox<String> cbxDistrict3;
+    private javax.swing.JComboBox<String> cbxEntity;
     private javax.swing.JComboBox<String> cbxEntity3;
     private javax.swing.JComboBox<String> cbxNascent;
     private javax.swing.JComboBox<String> cbxProvince2;
@@ -1642,8 +1746,10 @@ public class SuperAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tblCaudal;
+    private javax.swing.JTable tblDatos;
     private javax.swing.JTable tblNascents;
     private javax.swing.JTable tblSampling_site;
     private javax.swing.JTable tblentities;

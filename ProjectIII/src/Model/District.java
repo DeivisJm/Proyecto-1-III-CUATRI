@@ -10,7 +10,7 @@ public class District {
     private String name;
     private int canton_id;
 
-    public District() {
+    public District(int districtId, String districtName) {
     }
 
     public District(int id, String name, int canton_id) {

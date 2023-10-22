@@ -17,7 +17,7 @@ public class Nascent {
     private int district_id;
     private int entity_id;
 
-    public Nascent() {
+    public Nascent(int nascentId, String nascentName, String nascentAddress, double nascentLatitude, double nascentLength, String nascentDescription) {
     }
 
     public Nascent(int id, String name, String address, int latitude, int length, String description, int province_id, int canton_id, int district_id, int entity_id) {
@@ -44,6 +44,14 @@ public class Nascent {
         this.district_id = district_id;
         this.entity_id = entity_id;
     }
+    
+     public Nascent(String name, String address, int latitude, int length, String description) {
+        this.name = name;
+        this.address = address;
+        this.latitude = latitude;
+        this.length = length;
+        this.description = description;
+     }
 
     /**
      * @return the id

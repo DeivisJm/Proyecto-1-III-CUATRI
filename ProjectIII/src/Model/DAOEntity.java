@@ -148,4 +148,24 @@ public class DAOEntity {
         }
         return value;
     }
+    
+    public List<String> readEntitys() {
+        DBConnection db = new DBConnection();
+        List<String> subjects = new ArrayList<>();
+        String sql = "SELECT name FROM entities";
+
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                String nombre = resultSet.getString("name");
+                subjects.add(new String(nombre));
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+        return subjects;
+    }
 }

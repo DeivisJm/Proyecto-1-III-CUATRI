@@ -2,19 +2,22 @@ package Model;
 
 /**
  *
- * @author deivis
+ * @author fabri
  */
 import model.DBConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 
 public class DAONascent {
 
     public DAONascent() {
+
     }
 
     public void createNascent(Nascent nascent) {
@@ -122,7 +125,58 @@ public class DAONascent {
         }
 
     }
-    
+
+    public List<Canton> readCantonsByProvince(String selectedProvince) {
+        DBConnection db = new DBConnection();
+        List<Canton> cantons = new ArrayList<>();
+        String query = "SELECT c.id, c.name FROM cantons c "
+                + "INNER JOIN provinces p ON c.province_id = p.id "
+                + "WHERE p.name = ?";
+
+        try (PreparedStatement preparedStatement = db.getConnection().prepareStatement(query)) {
+            preparedStatement.setString(1, selectedProvince);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    int cantonId = resultSet.getInt("id");
+                    String cantonName = resultSet.getString("name");
+                    cantons.add(new Canton(cantonId, cantonName));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Manejo de excepciones
+        }
+
+        return cantons;
+    }
+
+    public List<District> readDistrictByProvince(String selectedProvince) {
+        DBConnection db = new DBConnection();
+        List<District> districts = new ArrayList<>();
+        String query = "SELECT d.id, d.name FROM districts d "
+                + "INNER JOIN cantons c ON d.canton_id = c.id "
+                + "INNER JOIN provinces p ON c.province_id = p.id "
+                + "WHERE p.name = ?";
+
+        try (PreparedStatement preparedStatement = db.getConnection().prepareStatement(query)) {
+            preparedStatement.setString(1, selectedProvince);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    int districtId = resultSet.getInt("id");
+                    String districtName = resultSet.getString("name");
+                    districts.add(new District(districtId, districtName));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Manejo de excepciones
+        }
+
+        return districts;
+    }
+
     public int getIDProvince(String name) {
         int value = 0;
         DBConnection db = new DBConnection();
@@ -141,8 +195,8 @@ public class DAONascent {
         }
         return value;
     }
-    
-     public int getIDCanton(String name) {
+
+    public int getIDCanton(String name) {
         int value = 0;
         DBConnection db = new DBConnection();
         String sql = "SELECT id FROM cantons WHERE name = ?";
@@ -160,10 +214,8 @@ public class DAONascent {
         }
         return value;
     }
-     
-     
-    
-     public int getIDDistrict(String name) {
+
+    public int getIDDistrict(String name) {
         int value = 0;
         DBConnection db = new DBConnection();
         String sql = "SELECT id FROM districties WHERE name = ?";
@@ -181,9 +233,7 @@ public class DAONascent {
         }
         return value;
     }
-     
-     
-    
+
     public int getIDEntity(String name) {
         int value = 0;
         DBConnection db = new DBConnection();
@@ -201,5 +251,44 @@ public class DAONascent {
             db.disconnect();
         }
         return value;
+    }
+    
+    public Map<String, Nascent> getNascentsByEntity(String entityName) {
+    Map<String, Nascent> nascentsByEntity = new HashMap<>();
+    DBConnection db = new DBConnection();
+    String sql = "SELECT n.id, n.name, n.address, n.latitude, n.length, n.description " +
+                   "FROM nascents n " +
+                   "INNER JOIN entities e ON n.entity_id = e.id " +
+                   "WHERE e.name = ?";
+   
+
+   try {
+    PreparedStatement ps = db.getConnection().prepareStatement(sql);
+    ps.setString(1, entityName);
+    ResultSet resultSet = ps.executeQuery();
+
+    while (resultSet.next()) {
+        int nascentId = resultSet.getInt("id");
+        String nascentName = resultSet.getString("name");
+        String nascentAddress = resultSet.getString("address");
+        double nascentLatitude = resultSet.getDouble("latitude");
+        double nascentLongitude = resultSet.getDouble("longitude");
+        String nascentDescription = resultSet.getString("description");
+
+        // Create an instance of Nascent with the retrieved data
+        Nascent nascent = new Nascent(nascentId, nascentName, nascentAddress, nascentLatitude, nascentLongitude, nascentDescription);
+        
+        // Add the Nascent to the Map using the name as the key
+        nascentsByEntity.put(nascentName, nascent);
+    }
+} catch (SQLException e) {
+    e.printStackTrace();
+    // Exception handling
+} finally {
+    db.disconnect();
+}
+
+return nascentsByEntity;
+
     }
 }

@@ -10,7 +10,7 @@ public class Canton {
     private String name;
     private int province_id;
 
-    public Canton() {
+    public Canton(int cantonId, String cantonName) {
     }
 
     public Canton(int id, String name, int province_id) {
