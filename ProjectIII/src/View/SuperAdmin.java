@@ -5,6 +5,7 @@ import Model.DAONascent;
 import Model.Nascent;
 import Model.Validations;
 import java.util.Map;
+import javax.swing.table.DefaultTableModel;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -1601,9 +1602,30 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxentityidActionPerformed
 
     private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
-        this.cm.addMeasurement(tblCaudal, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtWeather4);
-        this.cm.loadDataMeasurement(tblCaudal);
-        this.cm.clearMeasurements(txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4, txtRealizado4);
+                 // Obtener los valores de los campos de texto y ComboBox
+    String capacity = txtCapacity4.getText();
+    String method = txtMethod4.getText();
+    String observation = txtObsevation4.getText();
+    String date = txtDate4.getText();
+    String clima = txtWeather4.getText();
+    String realizado = txtRealizado4.getText();
+    String nascent = cbxNascent.getSelectedItem().toString();
+    String site = cbxSites.getSelectedItem().toString();
+
+    // Generar un ID automáticamente
+    DefaultTableModel model = (DefaultTableModel) tblCaudal.getModel();
+    int id = model.getRowCount() + 1;
+
+    // Agregar los datos a la tabla
+    model.addRow(new Object[]{id, capacity, method, observation, date, clima, realizado, nascent, site});
+
+    // Limpiar los campos de texto después de agregar los datos
+    txtCapacity4.setText("");
+    txtMethod4.setText("");
+    txtObsevation4.setText("");
+    txtDate4.setText("");
+    txtWeather4.setText("");
+    txtRealizado4.setText("");
           
         
     }//GEN-LAST:event_btnAdd4ActionPerformed
