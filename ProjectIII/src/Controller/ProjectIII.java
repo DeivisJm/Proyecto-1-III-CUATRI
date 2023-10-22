@@ -4,7 +4,7 @@ import View.*;
 
 /**
  *
- * @author deivis
+ * @author Cristopher Matus
  */
 public class ProjectIII {
 

@@ -9,7 +9,7 @@ import model.DBConnection;
 
 /**
  *
- * @author deivi
+ * @author Cristopher Matus
  */
 public class DAOCanton {
 

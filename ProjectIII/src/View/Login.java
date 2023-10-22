@@ -1,7 +1,7 @@
 package View;
 
 import javax.swing.JOptionPane;
-
+//@author Cristopher Matus
 public class Login extends javax.swing.JFrame {
 
     public Login() {

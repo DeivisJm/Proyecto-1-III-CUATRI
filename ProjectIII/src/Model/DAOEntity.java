@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author deivis
+ * @author Cristopher Matus
  */
 public class DAOEntity {
 

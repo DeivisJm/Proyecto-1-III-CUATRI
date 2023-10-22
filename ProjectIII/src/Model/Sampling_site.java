@@ -2,7 +2,7 @@ package Model;
 
 /**
  *
- * @author deivi
+ * @author Cristopher Matus
  */
 public class Sampling_site {
 

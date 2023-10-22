@@ -2,7 +2,7 @@ package Model;
 
 /**
  *
- * @author deivis
+ * @author Cristopher Matus
  */
 public class Entity {
 
