@@ -17,6 +17,11 @@ public class Measurement {
     private String weather;
     private int nascent_id;
     private int samplingsite_id;
+    private String nascent;
+    private String site;
+    
+    
+   
 
     public Measurement() {
     }
@@ -41,6 +46,18 @@ public class Measurement {
         this.nascent_id = nascent_id;
         this.samplingsite_id = samplingsite_id;
     }
+    
+     public Measurement(double capacity, String method, String observation, Date date, String weather, String nascent, String site) {
+        this.capacity = capacity;
+        this.method = method;
+        this.observation = observation;
+        this.date = date;
+        this.weather = weather;
+         this.nascent = nascent;
+        this.site = site;
+        
+    }
+     
     
     
 
@@ -155,4 +172,34 @@ public class Measurement {
     public void setSamplingsite_id(int samplingsite_id) {
         this.samplingsite_id = samplingsite_id;
     }
+
+    /**
+     * @return the nascent
+     */
+    public String getNascent() {
+        return nascent;
+    }
+
+    /**
+     * @param nascent the nascent to set
+     */
+    public void setNascent(String nascent) {
+        this.nascent = nascent;
+    }
+
+    /**
+     * @return the site
+     */
+    public String getSite() {
+        return site;
+    }
+
+    /**
+     * @param site the site to set
+     */
+    public void setSite(String site) {
+        this.site = site;
+    }
+
+   
 }

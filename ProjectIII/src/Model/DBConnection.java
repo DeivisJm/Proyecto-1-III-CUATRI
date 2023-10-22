@@ -9,7 +9,7 @@ import java.sql.SQLException;
  */
 public class DBConnection {
     
-    static String bd = "database";
+    static String bd = "project1";
     static String port = "3306";
     static String login = "root";
     static String password = "reacefa208fabricio";

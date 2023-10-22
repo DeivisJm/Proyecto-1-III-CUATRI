@@ -33,8 +33,8 @@ public class CtrlEntity {
         }
     }
 
-    public void addEntities(JTable tblentity, JTextField txtidnumberentity, JTextField txtnameentity, JTextField txtemailentity, JTextField txtcelphone, JTextField txtaddressentity, JTextField txtdescriptionentity) {
-        this.daoentity.createEntity(new Entity(Integer.parseInt(txtidnumberentity.getText()), txtnameentity.getText(), txtemailentity.getText(), Integer.parseInt(txtcelphone.getText()), txtaddressentity.getText(), txtdescriptionentity.getText()));
+    public void addEntities(JTable tblentity, JTextField txtIdnumberentity, JTextField txtNameentity1, JTextField txtEmailentity1, JTextField txtCelphone1, JTextField txtAddressentity1, JTextField txtDescriptionentity1) {
+        this.daoentity.createEntity(new Entity(Integer.parseInt(txtIdnumberentity.getText()), txtNameentity1.getText(), txtEmailentity1.getText(), Integer.parseInt(txtCelphone1.getText()), txtAddressentity1.getText(), txtDescriptionentity1.getText()));
     }
 
     public void updatedEntities(JTextField txtidnumberentity, JTextField txtnameentity, JTextField txtemailentity, JTextField txtcelphone, JTextField txtaddressentity, JTextField txtdescriptionentity) {
@@ -46,7 +46,7 @@ public class CtrlEntity {
     }
 
     public void selectedRowEntity(JTable tblentities, JTextField txtidnumberentity, JTextField txtnameentity,
-            JTextField txtemailentity, JTextField txtcelphone, JTextField txtaddressentity, JTextField txtdescriptionentity) {
+            JTextField txtemailentity, JTextField txtcelphone, JTextField txtaddressentity, JTextField txtDescriptionentity1) {
         try {
             int row = tblentities.getSelectedRow();
             if (row >= 0) {
@@ -56,7 +56,7 @@ public class CtrlEntity {
                 txtemailentity.setText(tblentities.getValueAt(row, 3).toString());
                 txtcelphone.setText(tblentities.getValueAt(row, 4).toString());
                 txtaddressentity.setText(tblentities.getValueAt(row, 5).toString());
-                txtdescriptionentity.setText(tblentities.getValueAt(row, 5).toString());
+                txtDescriptionentity1.setText(tblentities.getValueAt(row, 6).toString());
 
             } else {
                 JOptionPane.showMessageDialog(null, "Fila no seleccionada");

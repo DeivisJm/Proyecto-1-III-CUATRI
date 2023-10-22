@@ -23,6 +23,10 @@ public class CtrlNascent {
     DAODistrict daoDistrict = new DAODistrict();
     DAOEntity daoentity = new DAOEntity();
     int id;
+    int provinceID;
+    int cantonID;
+    int districtsID;
+    int entityID;
 
     public void loadDataNascent(JTable tblnascent) {
 
@@ -47,7 +51,7 @@ public class CtrlNascent {
 
     
 
-    public void deleteSamplingSite() {
+    public void deleteNascent() {
         this.daoNascent.deleteNascent(this.id);
     }
 
@@ -74,7 +78,40 @@ public class CtrlNascent {
             JOptionPane.showMessageDialog(null, "Error de selección, error: " + e.toString());
         }
     }
+    
+  public void addNacents(JTable tblNascents, JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2) {
+   
+    this.daoNascent.createNascent(new Nascent(txtNamenascent2.getText(),txtAddressnascent2.getText(),Integer.parseInt(txtLatitudenascent2.getText()),Integer.parseInt(txtLengthnascent2.getText()),txtDescriptionnascent2.getText(), this.provinceID, this.cantonID, this.districtsID, this.entityID));
+}
 
+    
+    public void getIdProvinces(JComboBox cbxProvince2) {
+        this.provinceID = this.daoNascent.getIDProvince(cbxProvince2.getSelectedItem().toString());
+    }
+    
+    public void getIdCantons(JComboBox Cantons) {
+        this.cantonID = this.daoNascent.getIDCanton(Cantons.getSelectedItem().toString());
+    }
+     
+    public void getIdDistrictis(JComboBox District) {
+        this.districtsID= this.daoNascent.getIDDistrict(District.getSelectedItem().toString());
+    }
+      
+    public void getIdEnty(JComboBox Entitys) {
+        this.entityID= this.daoNascent.getIDEntity(Entitys.getSelectedItem().toString());
+    }
+    
+    public void clearNascent(JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2) {
+        txtNamenascent2.setText("");
+        txtAddressnascent2.setText("");
+        txtLatitudenascent2.setText("");
+        txtLengthnascent2.setText("");
+        txtDescriptionnascent2.setText("");
+    }
+    
+    
+   
+    
     public void loadProvinces(JComboBox cbxProvince) {
         List<Province> provinces = daoProvince.readProvince();
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();

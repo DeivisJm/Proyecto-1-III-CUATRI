@@ -10,6 +10,7 @@ import model.DBConnection;
 import java.util.Date;
 
 
+
 /**
  *
  * @author fabri
@@ -22,22 +23,20 @@ public class DAOmeasurement {
     public void createFlow(Measurement measurement) {
 
         DBConnection db = new DBConnection();
-        String consultaSQL = "INSERT INTO flow_measurements () VALUES (?, ?, ?, ?, ?, ?, ? )";
+        String consultaSQL = "INSERT INTO flow_measurements (capacity, method, observation, date, weather, nascent_id, samplingsite_id) VALUES (?, ?, ?, ?, ?, ? ,?)";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
             ps.setDouble(1, measurement.getCapacity());
             ps.setString(2, measurement.getMethod());
             ps.setString(3, measurement.getObservation());
-            java.util.Date utilDate = measurement.getDate();
-            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-            ps.setDate(4, sqlDate);
+            ps.setDate(4, new java.sql.Date(measurement.getDate().getTime()));
             ps.setString(5, measurement.getWeather());
             ps.setInt(6, measurement.getNascent_id());
             ps.setInt(7, measurement.getSamplingsite_id());
             ps.execute();
-            JOptionPane.showMessageDialog(null, "Se agrego correctamente la entidad");
+            JOptionPane.showMessageDialog(null, "Se agrego correctamente la medicion");
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "No Se agrego correctamente la entidad, error: " + e.toString());
+            JOptionPane.showMessageDialog(null, "Error, error: " + e.toString());
         } finally {
             db.disconnect();
         }
@@ -120,6 +119,84 @@ public class DAOmeasurement {
         }
     }
     
+   
+    
+    
+    public String getNameNacent(int id) {
+        String value = "";
+        DBConnection db = new DBConnection();
+        String sql = "SELECT name FROM nascents WHERE id = ?";
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                value = resultSet.getString("name");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+        return value;
+    }
+    
+    public String getNameSampling(int id) {
+        String value = "";
+        DBConnection db = new DBConnection();
+        String sql = "SELECT name FROM sampling_sites WHERE id = ?";
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                value = resultSet.getString("name");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+        return value;
+    }
+    
+    public int getIDNacent(String name) {
+        int value = 0;
+        DBConnection db = new DBConnection();
+        String sql = "SELECT id FROM nascents WHERE name = ?";
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ps.setString(1, name);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                value = resultSet.getInt("id");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+        return value;
+    }
+    
+     public int getIDSampling(String name) {
+        int value = 0;
+        DBConnection db = new DBConnection();
+        String sql = "SELECT id FROM sampling_sites WHERE name = ?";
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ps.setString(1, name);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                value = resultSet.getInt("id");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+        return value;
+    }
     
 
    

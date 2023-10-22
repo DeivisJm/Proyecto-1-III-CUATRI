@@ -501,7 +501,7 @@ CtrlUser cu = new CtrlUser();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblCaudalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCaudalMouseClicked
-        this.cm.selectedRowMeasurement(tblCaudal, txtCapacity, txtMethod, txtObsevation, txtDate, txtClima, txtRealizado);
+        this.cm.selectedRowMeasurement(tblCaudal, txtCapacity, txtMethod, txtObsevation, txtDate, txtClima, txtRealizado, cbxentityid, cbxrolid);
     }//GEN-LAST:event_tblCaudalMouseClicked
 
     private void tbluserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbluserMouseClicked

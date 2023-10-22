@@ -25,6 +25,8 @@ public class SuperAdmin extends javax.swing.JFrame {
     }
 
     private void loadCBX() {
+        this.cm.loadSampling(cbxSites);
+        this.cm.loadNascents(cbxNascent);
         this.cu.loadRoles(cbxrolid);
         this.cu.loadEntities(cbxentityid);
         this.cs.loadProvinces(cbxProvince_id3);
@@ -51,7 +53,7 @@ public class SuperAdmin extends javax.swing.JFrame {
     }
 
     private void loadDataNascent() {
-        this.cn.loadDataNascent(tblnascent);
+        this.cn.loadDataNascent(tblNascents);
     }
     
     private void loadDataMeasurent(){
@@ -59,8 +61,17 @@ public class SuperAdmin extends javax.swing.JFrame {
     }
 
     private void clear() {
-        this.ce.clearEntities(txtidNumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
+        this.ce.clearEntities(txtIdnumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
     }
+    
+    private void clear4(){
+        this.cm.clearMeasurements(txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4, txtRealizado4);
+    }
+    
+    private void clean(){
+        this.cn.clearNascent(txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -75,7 +86,7 @@ public class SuperAdmin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtidNumberentity1 = new javax.swing.JTextField();
+        txtIdnumberentity1 = new javax.swing.JTextField();
         txtEmailentity1 = new javax.swing.JTextField();
         txtNameentity1 = new javax.swing.JTextField();
         txtCelphone1 = new javax.swing.JTextField();
@@ -112,7 +123,7 @@ public class SuperAdmin extends javax.swing.JFrame {
         btnAgregar2 = new javax.swing.JButton();
         btnEliminar2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tblnascent = new javax.swing.JTable();
+        tblNascents = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -144,11 +155,11 @@ public class SuperAdmin extends javax.swing.JFrame {
         txtDate4 = new javax.swing.JTextField();
         txtRealizado4 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        txtClima4 = new javax.swing.JTextField();
+        txtWeather4 = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jComboBox11 = new javax.swing.JComboBox<>();
-        jComboBox12 = new javax.swing.JComboBox<>();
+        cbxNascent = new javax.swing.JComboBox<>();
+        cbxSites = new javax.swing.JComboBox<>();
         jPanel16 = new javax.swing.JPanel();
         btnEdit4 = new javax.swing.JButton();
         btnAdd4 = new javax.swing.JButton();
@@ -212,9 +223,9 @@ public class SuperAdmin extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Descripcion:");
 
-        txtidNumberentity1.addActionListener(new java.awt.event.ActionListener() {
+        txtIdnumberentity1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidNumberentity1ActionPerformed(evt);
+                txtIdnumberentity1ActionPerformed(evt);
             }
         });
 
@@ -244,7 +255,7 @@ public class SuperAdmin extends javax.swing.JFrame {
                             .addComponent(txtCelphone1)
                             .addComponent(txtEmailentity1)
                             .addComponent(txtNameentity1)
-                            .addComponent(txtidNumberentity1))))
+                            .addComponent(txtIdnumberentity1))))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -253,7 +264,7 @@ public class SuperAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtidNumberentity1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIdnumberentity1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -524,11 +535,21 @@ public class SuperAdmin extends javax.swing.JFrame {
         btnAgregar2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAgregar2.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregar2.setText("Agregar");
+        btnAgregar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregar2ActionPerformed(evt);
+            }
+        });
 
         btnEliminar2.setBackground(new java.awt.Color(204, 0, 51));
         btnEliminar2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEliminar2.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar2.setText("Eliminar");
+        btnEliminar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -554,12 +575,12 @@ public class SuperAdmin extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
-        tblnascent.setModel(new javax.swing.table.DefaultTableModel(
+        tblNascents.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Dirreccion", "Latitud", "Longitud", "Descripcion", "Provincia", "Canton", "Distrito", "Entidad"
+                "ID", "Nombre", "Direccion", "Latitud", "Longitud", "Descripcion", "Provincia", "Canton", "Distrito", "Entidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -570,23 +591,23 @@ public class SuperAdmin extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblnascent.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblNascents.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblnascentMouseClicked(evt);
+                tblNascentsMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(tblnascent);
-        if (tblnascent.getColumnModel().getColumnCount() > 0) {
-            tblnascent.getColumnModel().getColumn(0).setResizable(false);
-            tblnascent.getColumnModel().getColumn(1).setResizable(false);
-            tblnascent.getColumnModel().getColumn(2).setResizable(false);
-            tblnascent.getColumnModel().getColumn(3).setResizable(false);
-            tblnascent.getColumnModel().getColumn(4).setResizable(false);
-            tblnascent.getColumnModel().getColumn(5).setResizable(false);
-            tblnascent.getColumnModel().getColumn(6).setResizable(false);
-            tblnascent.getColumnModel().getColumn(7).setResizable(false);
-            tblnascent.getColumnModel().getColumn(8).setResizable(false);
-            tblnascent.getColumnModel().getColumn(9).setResizable(false);
+        jScrollPane3.setViewportView(tblNascents);
+        if (tblNascents.getColumnModel().getColumnCount() > 0) {
+            tblNascents.getColumnModel().getColumn(0).setResizable(false);
+            tblNascents.getColumnModel().getColumn(1).setResizable(false);
+            tblNascents.getColumnModel().getColumn(2).setResizable(false);
+            tblNascents.getColumnModel().getColumn(3).setResizable(false);
+            tblNascents.getColumnModel().getColumn(4).setResizable(false);
+            tblNascents.getColumnModel().getColumn(5).setResizable(false);
+            tblNascents.getColumnModel().getColumn(6).setResizable(false);
+            tblNascents.getColumnModel().getColumn(7).setResizable(false);
+            tblNascents.getColumnModel().getColumn(8).setResizable(false);
+            tblNascents.getColumnModel().getColumn(9).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -729,6 +750,11 @@ public class SuperAdmin extends javax.swing.JFrame {
         btnEliminate3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEliminate3.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminate3.setText("Eliminar");
+        btnEliminate3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminate3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -842,9 +868,19 @@ public class SuperAdmin extends javax.swing.JFrame {
         jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel35.setText("Sitio_Muestreo:");
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxNascent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxNascent.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxNascentItemStateChanged(evt);
+            }
+        });
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxSites.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxSites.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxSitesItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -864,23 +900,23 @@ public class SuperAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtObsevation4, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
                                     .addComponent(txtMethod4)
-                                    .addComponent(txtDate4, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                                    .addComponent(txtObsevation4, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(46, 46, 46)
+                                    .addComponent(txtDate4))
+                                .addGap(31, 31, 31)
                                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(txtCapacity4, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
+                                .addComponent(txtCapacity4, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
                                 .addComponent(jLabel34)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cbxNascent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxSites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtRealizado4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                        .addComponent(txtClima4, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addComponent(txtRealizado4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                        .addComponent(txtWeather4, javax.swing.GroupLayout.Alignment.LEADING))))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -890,13 +926,13 @@ public class SuperAdmin extends javax.swing.JFrame {
                     .addComponent(jLabel22)
                     .addComponent(txtCapacity4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34)
-                    .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxNascent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(txtMethod4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35)
-                    .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxSites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
@@ -908,7 +944,7 @@ public class SuperAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(txtClima4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtWeather4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
@@ -933,6 +969,11 @@ public class SuperAdmin extends javax.swing.JFrame {
         btnAdd4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAdd4.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd4.setText("Agregar");
+        btnAdd4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdd4ActionPerformed(evt);
+            }
+        });
 
         BtnEliminar4.setBackground(new java.awt.Color(204, 0, 51));
         BtnEliminar4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -951,10 +992,10 @@ public class SuperAdmin extends javax.swing.JFrame {
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAdd4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAdd4, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                     .addComponent(btnEdit4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtnEliminar4, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(BtnEliminar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1007,13 +1048,13 @@ public class SuperAdmin extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane5)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1075, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
+                        .addGap(91, 91, 91)
                         .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1071,6 +1112,11 @@ public class SuperAdmin extends javax.swing.JFrame {
         jLabel29.setText("Rol:");
 
         cbxentityid.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxentityid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxentityidActionPerformed(evt);
+            }
+        });
 
         cbxrolid.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbxrolid.addActionListener(new java.awt.event.ActionListener() {
@@ -1343,7 +1389,9 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdduser6ActionPerformed
 
     private void btnEliminateuser6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminateuser6ActionPerformed
-        // TODO add your handling code here:
+        this.cu.deleteUser();
+        this.cu.clearFields(txtnameuser, txtnameuser, txtnameuser, txtemailuser, txtpassworduser);
+        this.cu.loadDataUser(tbluser);
 
     }//GEN-LAST:event_btnEliminateuser6ActionPerformed
 
@@ -1358,7 +1406,7 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_tbluserMouseClicked
 
     private void btnAddentity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddentity1ActionPerformed
-        String idNumber = txtidNumberentity1.getText();
+        String idNumber = txtIdnumberentity1.getText();
         String name = txtNameentity1.getText();
         String email = txtEmailentity1.getText();
         String phoneNumber = txtCelphone1.getText();
@@ -1377,8 +1425,8 @@ public class SuperAdmin extends javax.swing.JFrame {
         if (isIdNumberValid && isNameValid && isEmailValid && isPhoneNumberValid && isAddressValid && isDescriptionValid) {
             
         }
-        this.ce.addEntities(tblentities, txtidNumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
-        this.ce.clearEntities(txtidNumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
+        this.ce.addEntities(tblentities, txtIdnumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
+        this.ce.clearEntities(txtIdnumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
         this.ce.loadDataEntity(tblentities);
     }//GEN-LAST:event_btnAddentity1ActionPerformed
 
@@ -1401,32 +1449,32 @@ public class SuperAdmin extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void tblnascentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblnascentMouseClicked
+    private void tblNascentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNascentsMouseClicked
         // TODO add your handling code here:
-        this.cn.selectedRowNascent(tblnascent, txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2, cbxProvince2, cbxCanton2, cbxDistrict2, cbxentity2);
-    }//GEN-LAST:event_tblnascentMouseClicked
+        this.cn.selectedRowNascent(tblNascents, txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2, cbxProvince2, cbxCanton2, cbxDistrict2, cbxentity2);
+    }//GEN-LAST:event_tblNascentsMouseClicked
 
-    private void txtidNumberentity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidNumberentity1ActionPerformed
+    private void txtIdnumberentity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdnumberentity1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtidNumberentity1ActionPerformed
+    }//GEN-LAST:event_txtIdnumberentity1ActionPerformed
 
     private void tblentitiesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblentitiesMouseClicked
         // TODO add your handling code here:
-        this.ce.selectedRowEntity(tblentities, txtidNumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
+        this.ce.selectedRowEntity(tblentities, txtIdnumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
     }//GEN-LAST:event_tblentitiesMouseClicked
 
     private void btnEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdit1ActionPerformed
-        this.ce.updatedEntities(txtidNumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
+        this.ce.updatedEntities(txtIdnumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
         this.clear();
         this.ce.loadDataEntity(tblentities);
     }//GEN-LAST:event_btnEdit1ActionPerformed
 
     private void tblCaudalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCaudalMouseClicked
-       this.cm.selectedRowMeasurement(tblCaudal, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtClima4, txtRealizado4);
+       this.cm.selectedRowMeasurement(tblCaudal, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtWeather4, txtRealizado4, cbxNascent, cbxSites);
     }//GEN-LAST:event_tblCaudalMouseClicked
 
     private void btnEdit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdit4ActionPerformed
-       this.cm.updatedMeasurement(txtidNumberentity1, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4);
+       this.cm.updatedMeasurement(txtIdnumberentity1, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4);
        this.clear();
        this.cm.loadDataMeasurement(tblCaudal);
     }//GEN-LAST:event_btnEdit4ActionPerformed
@@ -1469,6 +1517,43 @@ public class SuperAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxProvince_id3ActionPerformed
 
+    private void cbxentityidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxentityidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxentityidActionPerformed
+
+    private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
+        this.cm.addMeasurement(tblCaudal, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtWeather4);
+        this.cm.loadDataMeasurement(tblCaudal);
+        this.cm.clearMeasurements(txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4, txtRealizado4);
+          
+        
+    }//GEN-LAST:event_btnAdd4ActionPerformed
+
+    private void cbxNascentItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNascentItemStateChanged
+        this.cm.getIdNacents(cbxNascent);
+    }//GEN-LAST:event_cbxNascentItemStateChanged
+
+    private void cbxSitesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxSitesItemStateChanged
+        this.cm.getIdSamplings(cbxSites);
+    }//GEN-LAST:event_cbxSitesItemStateChanged
+
+    private void btnAgregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar2ActionPerformed
+        this.cn.addNacents(tblNascents, txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2);
+        this.cn.loadDataNascent(tblNascents);
+    }//GEN-LAST:event_btnAgregar2ActionPerformed
+
+    private void btnEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar2ActionPerformed
+        this.cn.deleteNascent();
+        this.cn.clearNascent(txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2);
+        this.cn.loadDataNascent(tblNascents);
+    }//GEN-LAST:event_btnEliminar2ActionPerformed
+
+    private void btnEliminate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminate3ActionPerformed
+        this.cs.deleteSamplingSite();
+        this.cs.clearFields(txtNameampling_site3);
+        this.cs.loadDataSamplingSite(tblSampling_site);
+    }//GEN-LAST:event_btnEliminate3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEliminar4;
@@ -1491,14 +1576,14 @@ public class SuperAdmin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxDistrict2;
     private javax.swing.JComboBox<String> cbxDistrict3;
     private javax.swing.JComboBox<String> cbxEntity3;
+    private javax.swing.JComboBox<String> cbxNascent;
     private javax.swing.JComboBox<String> cbxProvince2;
     private javax.swing.JComboBox<String> cbxProvince_id3;
+    private javax.swing.JComboBox<String> cbxSites;
     private javax.swing.JComboBox<String> cbxentity2;
     private javax.swing.JComboBox<String> cbxentityid;
     private javax.swing.JComboBox<String> cbxrolid;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox12;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1559,19 +1644,19 @@ public class SuperAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tblCaudal;
+    private javax.swing.JTable tblNascents;
     private javax.swing.JTable tblSampling_site;
     private javax.swing.JTable tblentities;
-    private javax.swing.JTable tblnascent;
     private javax.swing.JTable tbluser;
     private javax.swing.JTextField txtAddressentity1;
     private javax.swing.JTextField txtAddressnascent2;
     private javax.swing.JTextField txtCapacity4;
     private javax.swing.JTextField txtCelphone1;
-    private javax.swing.JTextField txtClima4;
     private javax.swing.JTextField txtDate4;
     private javax.swing.JTextField txtDescriptionentity1;
     private javax.swing.JTextField txtDescriptionnascent2;
     private javax.swing.JTextField txtEmailentity1;
+    private javax.swing.JTextField txtIdnumberentity1;
     private javax.swing.JTextField txtLatitudenascent2;
     private javax.swing.JTextField txtLengthnascent2;
     private javax.swing.JTextField txtMethod4;
@@ -1580,9 +1665,9 @@ public class SuperAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtNamenascent2;
     private javax.swing.JTextField txtObsevation4;
     private javax.swing.JTextField txtRealizado4;
+    private javax.swing.JTextField txtWeather4;
     private javax.swing.JTextField txtemailuser;
     private javax.swing.JTextField txtfirst_lastname;
-    private javax.swing.JTextField txtidNumberentity1;
     private javax.swing.JTextField txtnameuser;
     private javax.swing.JTextField txtpassworduser;
     private javax.swing.JTextField txtsecond_lastname;
