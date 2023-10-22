@@ -128,4 +128,8 @@ public class CtrlMeasurement {
         cbxSites.setModel(model);
     }
 
+    public void addMeasurement(JTable tblCaudal, JTextField txtCapacity, JTextField txtMethod, JTextField txtObsevation, JTextField txtDate) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
