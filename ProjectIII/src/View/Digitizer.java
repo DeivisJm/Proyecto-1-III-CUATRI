@@ -2,6 +2,8 @@ package View;
 
 import Controller.CtrlMeasurement;
 import Controller.CtrlUser;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -9,22 +11,26 @@ import javax.swing.table.DefaultTableModel;
  * @author fabri
  */
 public class Digitizer extends javax.swing.JFrame {
-CtrlMeasurement cm = new CtrlMeasurement();
-CtrlUser cu = new CtrlUser();
+
+    CtrlMeasurement cm = new CtrlMeasurement();
+    CtrlUser cu = new CtrlUser();
+
     /**
      * Creates new form Digitizer
      */
     public Digitizer() {
-        this.setLocationRelativeTo(null);
+
         initComponents();
+        this.setLocationRelativeTo(null);
         this.loadDataMeasurent();
+        this.setVisible(true);
+
     }
-       private void loadDataMeasurent(){
+
+    private void loadDataMeasurent() {
         this.cm.loadDataMeasurement(tblCaudal);
-        this.loadDataUser();
-    }
-         private void loadDataUser() {
-        this.cu.loadDataUser(tbluser);
+        this.cm.loadSampling(cbxSites);
+        this.cm.loadNascents(cbxNascent);
     }
 
 
@@ -69,18 +75,16 @@ CtrlUser cu = new CtrlUser();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        txtnameuser = new javax.swing.JTextField();
-        txtsecond_lastname = new javax.swing.JTextField();
-        txtfirst_lastname = new javax.swing.JTextField();
-        txtemailuser = new javax.swing.JTextField();
-        txtpassworduser = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        cbxentityid = new javax.swing.JComboBox<>();
-        cbxrolid = new javax.swing.JComboBox<>();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tbluser = new javax.swing.JTable();
+        txtNombre = new javax.swing.JTextField();
+        txtApellido1 = new javax.swing.JTextField();
+        txtApellido2 = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JTextField();
+        btnCargarPerfil = new javax.swing.JButton();
+        txtEntidad = new javax.swing.JTextField();
+        txtRol = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -294,7 +298,7 @@ CtrlUser cu = new CtrlUser();
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         panel3.setBackground(new java.awt.Color(255, 255, 255));
-        panel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingresar Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        panel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Perfil", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Nombre:");
@@ -317,12 +321,22 @@ CtrlUser cu = new CtrlUser();
         jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel29.setText("Rol:");
 
-        cbxentityid.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cbxrolid.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxrolid.addActionListener(new java.awt.event.ActionListener() {
+        txtApellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxrolidActionPerformed(evt);
+                txtApellido1ActionPerformed(evt);
+            }
+        });
+
+        txtContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContraseñaActionPerformed(evt);
+            }
+        });
+
+        btnCargarPerfil.setText("Cargar Perfil");
+        btnCargarPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarPerfilActionPerformed(evt);
             }
         });
 
@@ -333,35 +347,38 @@ CtrlUser cu = new CtrlUser();
             .addGroup(panel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(panel3Layout.createSequentialGroup()
+                            .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel8))
+                            .addGap(33, 33, 33)
+                            .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtNombre)
+                                .addComponent(txtApellido1, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)))
+                        .addGroup(panel3Layout.createSequentialGroup()
+                            .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel27)
+                                .addComponent(jLabel29))
+                            .addGap(63, 63, 63)
+                            .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtContraseña)
+                                .addComponent(txtEntidad)
+                                .addComponent(txtRol))))
                     .addGroup(panel3Layout.createSequentialGroup()
                         .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
-                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtsecond_lastname, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-                            .addComponent(txtemailuser)))
-                    .addGroup(panel3Layout.createSequentialGroup()
                         .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addGap(35, 35, 35)
-                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtfirst_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnameuser, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel29))
-                        .addGap(18, 18, 18)
-                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbxrolid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbxentityid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panel3Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(62, 62, 62)
-                        .addComponent(txtpassworduser, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                            .addComponent(txtApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panel3Layout.createSequentialGroup()
+                                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(292, 292, 292)
+                                .addComponent(btnCargarPerfil)
+                                .addGap(144, 144, 144)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,28 +386,33 @@ CtrlUser cu = new CtrlUser();
                 .addContainerGap()
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtnameuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27)
-                    .addComponent(cbxentityid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(txtfirst_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29)
-                    .addComponent(cbxrolid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(txtsecond_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txtemailuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCargarPerfil))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(txtpassworduser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(txtEntidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(txtRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -398,75 +420,12 @@ CtrlUser cu = new CtrlUser();
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 790, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-
-        tbluser.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tbluser.setForeground(java.awt.Color.darkGray);
-        tbluser.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Nombre", "Primer Apellido", "Segundo Apellido", "Correo", "Contraseña", "Entidad", "Rol"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tbluser.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tbluserAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        tbluser.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbluserMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tbluser);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -475,19 +434,15 @@ CtrlUser cu = new CtrlUser();
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Perfil Digitador", jPanel1);
@@ -522,46 +477,34 @@ CtrlUser cu = new CtrlUser();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblCaudalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCaudalMouseClicked
-        this.cm.selectedRowMeasurement(tblCaudal, txtCapacity, txtMethod, txtObsevation, txtDate, txtClima, txtRealizado, cbxentityid, cbxrolid);
+        this.cm.selectedRowMeasurement(tblCaudal, txtCapacity, txtMethod, txtObsevation, txtDate, txtClima, txtRealizado);
     }//GEN-LAST:event_tblCaudalMouseClicked
 
-    private void tbluserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbluserMouseClicked
-this.cu.selectedRowUsers(tbluser, txtnameuser, txtfirst_lastname, txtsecond_lastname, txtemailuser, txtpassworduser, cbxrolid, cbxentityid);
-    }//GEN-LAST:event_tbluserMouseClicked
-
-    private void tbluserAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tbluserAncestorAdded
-       this.cu.selectedRowUsers(tbluser, txtnameuser, txtfirst_lastname, txtsecond_lastname, txtemailuser, txtpassworduser, cbxrolid, cbxentityid);
-    }//GEN-LAST:event_tbluserAncestorAdded
-
-    private void cbxrolidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxrolidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxrolidActionPerformed
-
     private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
-         // Obtener los valores de los campos de texto y ComboBox
-    String capacity = txtCapacity.getText();
-    String method = txtMethod.getText();
-    String observation = txtObsevation.getText();
-    String date = txtDate.getText();
-    String clima = txtClima.getText();
-    String realizado = txtRealizado.getText();
-    String nascent = cbxNascent.getSelectedItem().toString();
-    String site = cbxSites.getSelectedItem().toString();
+        // Obtener los valores de los campos de texto y ComboBox
+        String capacity = txtCapacity.getText();
+        String method = txtMethod.getText();
+        String observation = txtObsevation.getText();
+        String date = txtDate.getText();
+        String clima = txtClima.getText();
+        String realizado = txtRealizado.getText();
+        String nascent = cbxNascent.getSelectedItem().toString();
+        String site = cbxSites.getSelectedItem().toString();
 
-    // Generar un ID automáticamente
-    DefaultTableModel model = (DefaultTableModel) tblCaudal.getModel();
-    int id = model.getRowCount() + 1;
+        // Generar un ID automáticamente
+        DefaultTableModel model = (DefaultTableModel) tblCaudal.getModel();
+        int id = model.getRowCount() + 1;
 
-    // Agregar los datos a la tabla
-    model.addRow(new Object[]{id, capacity, method, observation, date, clima, realizado, nascent, site});
+        // Agregar los datos a la tabla
+        model.addRow(new Object[]{id, capacity, method, observation, date, clima, realizado, nascent, site});
 
-    // Limpiar los campos de texto después de agregar los datos
-    txtCapacity.setText("");
-    txtMethod.setText("");
-    txtObsevation.setText("");
-    txtDate.setText("");
-    txtClima.setText("");
-    txtRealizado.setText("");
+        // Limpiar los campos de texto después de agregar los datos
+        txtCapacity.setText("");
+        txtMethod.setText("");
+        txtObsevation.setText("");
+        txtDate.setText("");
+        txtClima.setText("");
+        txtRealizado.setText("");
 
     }//GEN-LAST:event_btnAdd4ActionPerformed
 
@@ -570,6 +513,29 @@ this.cu.selectedRowUsers(tbluser, txtnameuser, txtfirst_lastname, txtsecond_last
         l.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellido1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellido1ActionPerformed
+
+    private void txtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContraseñaActionPerformed
+
+    private void btnCargarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarPerfilActionPerformed
+        // TODO add your handling code here:
+          // Cargar los datos en los campos de texto
+                txtNombre.setText("Cristopher");
+                txtApellido1.setText("Matus");
+                txtApellido2.setText("Salas");
+                txtCorreo.setText("matus9@gmail.com");
+                txtContraseña.setText("digitador");
+                txtEntidad.setText("MUNICIPALIDAD SAN CARLOS");
+                txtRol.setText("Digitador");
+        Component frame = null;
+                JOptionPane.showMessageDialog(frame, "Perfil cargado");
+            
+    }//GEN-LAST:event_btnCargarPerfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -608,10 +574,9 @@ this.cu.selectedRowUsers(tbluser, txtnameuser, txtfirst_lastname, txtsecond_last
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd4;
+    private javax.swing.JButton btnCargarPerfil;
     private javax.swing.JComboBox<String> cbxNascent;
     private javax.swing.JComboBox<String> cbxSites;
-    private javax.swing.JComboBox<String> cbxentityid;
-    private javax.swing.JComboBox<String> cbxrolid;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -634,23 +599,22 @@ this.cu.selectedRowUsers(tbluser, txtnameuser, txtfirst_lastname, txtsecond_last
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel panel3;
     private javax.swing.JTable tblCaudal;
-    private javax.swing.JTable tbluser;
+    private javax.swing.JTextField txtApellido1;
+    private javax.swing.JTextField txtApellido2;
     private javax.swing.JTextField txtCapacity;
     private javax.swing.JTextField txtClima;
+    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDate;
+    private javax.swing.JTextField txtEntidad;
     private javax.swing.JTextField txtMethod;
+    private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtObsevation;
     private javax.swing.JTextField txtRealizado;
-    private javax.swing.JTextField txtemailuser;
-    private javax.swing.JTextField txtfirst_lastname;
-    private javax.swing.JTextField txtnameuser;
-    private javax.swing.JTextField txtpassworduser;
-    private javax.swing.JTextField txtsecond_lastname;
+    private javax.swing.JTextField txtRol;
     // End of variables declaration//GEN-END:variables
 }

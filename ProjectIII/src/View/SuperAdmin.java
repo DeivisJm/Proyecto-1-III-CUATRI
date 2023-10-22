@@ -910,11 +910,21 @@ public class SuperAdmin extends javax.swing.JFrame {
                 cbxNascentItemStateChanged(evt);
             }
         });
+        cbxNascent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxNascentActionPerformed(evt);
+            }
+        });
 
         cbxSites.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbxSites.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbxSitesItemStateChanged(evt);
+            }
+        });
+        cbxSites.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxSitesActionPerformed(evt);
             }
         });
 
@@ -1677,6 +1687,14 @@ public class SuperAdmin extends javax.swing.JFrame {
         re.generateBarChart(nascentsByEntity); // Llama al método desde la instancia de CtrlReports
     }
     }//GEN-LAST:event_btnGraficarActionPerformed
+
+    private void cbxNascentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNascentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxNascentActionPerformed
+
+    private void cbxSitesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSitesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxSitesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

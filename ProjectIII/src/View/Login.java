@@ -10,23 +10,24 @@ public class Login extends javax.swing.JFrame {
     }
 
 public void Ingresar() {
+String enteredUser = txtuser.getText();
     String enteredPassword = Txtpassword.getText();
     
-    if (enteredPassword.equals("superadmin")) {
-        // La contraseña es correcta, muestra la ventana del SuperAdmin
+    if (enteredUser.equals("Fabricio") && enteredPassword.equals("superadmin")) {
+        // Nombre de usuario y contraseña correctos para Fabricio
         SuperAdmin adminFrame = new SuperAdmin();
         adminFrame.setVisible(true);
-    } else if (enteredPassword.equals("Digitador")) {
-        // La contraseña es correcta, muestra la ventana del Digitador
-        Digitizer DigitizerFrame = new Digitizer();
-        DigitizerFrame.setVisible(true);
-    } else if (enteredPassword.equals("admin")) {
-        // La contraseña es correcta, muestra la ventana del Admin
-        Admin AdminFrame = new Admin();
-        AdminFrame.setVisible(true);
+    } else if (enteredUser.equals("Cristopher") && enteredPassword.equals("digitador")) {
+        // Nombre de usuario y contraseña correctos para Cristopher
+        Digitizer digitizerFrame = new Digitizer();
+        digitizerFrame.setVisible(true);
+    } else if (enteredUser.equals("Deivis") && enteredPassword.equals("admin")) {
+        // Nombre de usuario y contraseña correctos para Deivis
+        Admin adminFrame = new Admin();
+        adminFrame.setVisible(true);
     } else {
-        // Ninguna contraseña válida ingresada, muestra un mensaje de error
-        JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+        // Nombre de usuario o contraseña incorrectos, muestra un mensaje de error
+        JOptionPane.showMessageDialog(null, "Nombre de usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
 

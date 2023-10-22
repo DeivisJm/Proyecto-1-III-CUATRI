@@ -132,4 +132,8 @@ public class CtrlMeasurement {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    public void selectedRowMeasurement(JTable tblCaudal, JTextField txtCapacity, JTextField txtMethod, JTextField txtObsevation, JTextField txtDate, JTextField txtClima, JTextField txtRealizado) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
