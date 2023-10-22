@@ -3,6 +3,7 @@ package View;
 import Controller.CtrlMeasurement;
 import Controller.CtrlNascent;
 import Controller.CtrlSampling_site;
+import Controller.CtrlUser;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -10,9 +11,11 @@ import javax.swing.table.DefaultTableModel;
  * @author fabri
  */
 public class Admin extends javax.swing.JFrame {
-CtrlNascent cn = new CtrlNascent();
-CtrlSampling_site cs = new CtrlSampling_site();
-CtrlMeasurement cm = new CtrlMeasurement();
+
+    CtrlNascent cn = new CtrlNascent();
+    CtrlSampling_site cs = new CtrlSampling_site();
+    CtrlMeasurement cm = new CtrlMeasurement();
+    CtrlUser cu = new CtrlUser();
 
     /**
      * Creates new form Admin
@@ -23,10 +26,11 @@ CtrlMeasurement cm = new CtrlMeasurement();
         this.loadCBX();
         this.loadDataNascent();
         this.loadDataSampling_site();
-        this.cm.loadDataMeasurement(tblCaudal);
+        this.loadDataUser();
     }
-private void loadCBX() {
-  this.cn.loadProvinces(cbxProvince2);
+
+    private void loadCBX() {
+        this.cn.loadProvinces(cbxProvince2);
         this.cn.loadEntities(cbxentity2);
         this.cn.loadCantons(cbxCanton2);
         this.cn.loadDistrict(cbxDistrict2);
@@ -34,17 +38,25 @@ private void loadCBX() {
         this.cs.loadCantons(cbxCanton_id3);
         this.cs.loadDistrict(cbxDistrict3);
         this.cs.loadEntities(cbxEntity3);
-}
-private void loadDataSampling_site() {
+        this.cm.loadDataMeasurement(tblCaudal);
+    }
+
+    private void loadDataUser() {
+        this.cu.loadDataUser(tbluser);
+    }
+
+    private void loadDataSampling_site() {
         this.cs.loadDataSamplingSite(tblSampling_site);
     }
 
- private void loadDataNascent() {
+    private void loadDataNascent() {
         this.cn.loadDataNascent(tblNascents);
     }
-  private void clear(){
+
+    private void clear() {
         this.cn.clearNascent(txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,6 +131,25 @@ private void loadDataSampling_site() {
         jScrollPane5 = new javax.swing.JScrollPane();
         tblCaudal = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
+        panel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        contraseña = new javax.swing.JLabel();
+        txtnameuser = new javax.swing.JTextField();
+        txtsecond_lastname = new javax.swing.JTextField();
+        txtfirst_lastname = new javax.swing.JTextField();
+        txtemailuser = new javax.swing.JTextField();
+        txtpassworduser = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        cbxentityid = new javax.swing.JComboBox<>();
+        cbxrolid = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbluser = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        btnModificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -691,15 +722,208 @@ private void loadDataSampling_site() {
 
         jTabbedPane1.addTab("Medicion de caudal", jPanel4);
 
+        panel3.setBackground(new java.awt.Color(255, 255, 255));
+        panel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingresar Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setText("Nombre:");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setText("Primer Apellido:");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("Correo:");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("Segundo Apellido:");
+
+        contraseña.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        contraseña.setText("Contraseña:");
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel27.setText("Entidad:");
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel29.setText("Rol:");
+
+        cbxentityid.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        cbxrolid.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxrolid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxrolidActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
+        panel3.setLayout(panel3Layout);
+        panel3Layout.setHorizontalGroup(
+            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtsecond_lastname, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                            .addComponent(txtemailuser)))
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addGap(35, 35, 35)
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtfirst_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtnameuser, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel29))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbxrolid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxentityid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addComponent(contraseña)
+                        .addGap(62, 62, 62)
+                        .addComponent(txtpassworduser, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel3Layout.setVerticalGroup(
+            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtnameuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27)
+                    .addComponent(cbxentityid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtfirst_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29)
+                    .addComponent(cbxrolid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(txtsecond_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(txtemailuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contraseña)
+                    .addComponent(txtpassworduser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tbluser.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tbluser.setForeground(java.awt.Color.darkGray);
+        tbluser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nombre", "Primer Apellido", "Segundo Apellido", "Correo", "Contraseña", "Entidad", "Rol"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbluser.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tbluserAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        tbluser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbluserMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tbluser);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Boton", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+
+        btnModificar.setBackground(new java.awt.Color(0, 153, 153));
+        btnModificar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnModificar)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(btnModificar)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 926, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 35, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Usuarios", jPanel5);
@@ -734,9 +958,9 @@ private void loadDataSampling_site() {
     }//GEN-LAST:event_cbxCanton2ItemStateChanged
 
     private void btnEditar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar3ActionPerformed
-this.cn.addNacents(tblNascents, txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2);
-this.clear();
-this.cn.loadDataNascent(tblNascents);
+        this.cn.addNacents(tblNascents, txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2);
+        this.clear();
+        this.cn.loadDataNascent(tblNascents);
     }//GEN-LAST:event_btnEditar3ActionPerformed
 
     private void tblNascentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNascentsMouseClicked
@@ -749,7 +973,7 @@ this.cn.loadDataNascent(tblNascents);
     }//GEN-LAST:event_tblNascentsAncestorAdded
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         Login l = new Login();
+        Login l = new Login();
         l.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -811,15 +1035,28 @@ this.cn.loadDataNascent(tblNascents);
         this.cm.selectedRowMeasurement(tblCaudal, txtCapacity, txtMethod, txtObsevation, txtDate, txtClima, txtRealizado, cbxNascent, cbxSites);
     }//GEN-LAST:event_tblCaudalMouseClicked
 
+    private void cbxrolidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxrolidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxrolidActionPerformed
+
+    private void tbluserAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tbluserAncestorAdded
+
+    }//GEN-LAST:event_tbluserAncestorAdded
+
+    private void tbluserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbluserMouseClicked
+        this.cu.selectedRowUsers(tbluser, txtnameuser, txtfirst_lastname, txtsecond_lastname, txtemailuser, txtpassworduser, cbxrolid, cbxentityid);
+    }//GEN-LAST:event_tbluserMouseClicked
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+         this.cu.updateUser(tbluser,txtnameuser, txtnameuser, txtnameuser, txtemailuser, txtpassworduser);
+         this.clear();
+        this.cu.loadDataUser(tbluser);
+    }//GEN-LAST:event_btnModificarActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -849,6 +1086,7 @@ this.cn.loadDataNascent(tblNascents);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar3;
     private javax.swing.JButton btnEditsite3;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JComboBox<String> cbxCanton2;
     private javax.swing.JComboBox<String> cbxCanton_id3;
@@ -860,7 +1098,11 @@ this.cn.loadDataNascent(tblNascents);
     private javax.swing.JComboBox<String> cbxProvince_id3;
     private javax.swing.JComboBox<String> cbxSites;
     private javax.swing.JComboBox<String> cbxentity2;
+    private javax.swing.JComboBox<String> cbxentityid;
+    private javax.swing.JComboBox<String> cbxrolid;
+    private javax.swing.JLabel contraseña;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -876,13 +1118,19 @@ this.cn.loadDataNascent(tblNascents);
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -893,13 +1141,16 @@ this.cn.loadDataNascent(tblNascents);
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel panel3;
     private javax.swing.JTable tblCaudal;
     private javax.swing.JTable tblNascents;
     private javax.swing.JTable tblSampling_site;
+    private javax.swing.JTable tbluser;
     private javax.swing.JTextField txtAddressnascent2;
     private javax.swing.JTextField txtCapacity;
     private javax.swing.JTextField txtClima;
@@ -912,5 +1163,10 @@ this.cn.loadDataNascent(tblNascents);
     private javax.swing.JTextField txtNamenascent2;
     private javax.swing.JTextField txtObsevation;
     private javax.swing.JTextField txtRealizado;
+    private javax.swing.JTextField txtemailuser;
+    private javax.swing.JTextField txtfirst_lastname;
+    private javax.swing.JTextField txtnameuser;
+    private javax.swing.JTextField txtpassworduser;
+    private javax.swing.JTextField txtsecond_lastname;
     // End of variables declaration//GEN-END:variables
 }

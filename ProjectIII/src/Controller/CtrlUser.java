@@ -114,4 +114,16 @@ public class CtrlUser {
         cbxentityid.setModel(model);
     }
 
+    public void addUser(JTextField txtnameuser, JTextField txtnameuser0, JTextField txtnameuser1, JTextField txtemailuser, JTextField txtpassworduser) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void updateUser(JTextField txtnameuser, JTextField txtnameuser0, JTextField txtnameuser1, JTextField txtemailuser, JTextField txtpassworduser) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void updateUser(JTable tbluser, JTextField txtnameuser, JTextField txtnameuser0, JTextField txtnameuser1, JTextField txtemailuser, JTextField txtpassworduser) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

@@ -1476,7 +1476,7 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminateuser6ActionPerformed
 
     private void btnEdituser6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdituser6ActionPerformed
-        // TODO add your handling code here:
+        
 
     }//GEN-LAST:event_btnEdituser6ActionPerformed
 
