@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import Model.*;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 
@@ -49,8 +50,6 @@ public class CtrlNascent {
         }
     }
 
-    
-
     public void deleteNascent() {
         this.daoNascent.deleteNascent(this.id);
     }
@@ -78,29 +77,28 @@ public class CtrlNascent {
             JOptionPane.showMessageDialog(null, "Error de selección, error: " + e.toString());
         }
     }
-    
-  public void addNacents(JTable tblNascents, JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2) {
-   
-    this.daoNascent.createNascent(new Nascent(txtNamenascent2.getText(),txtAddressnascent2.getText(),Integer.parseInt(txtLatitudenascent2.getText()),Integer.parseInt(txtLengthnascent2.getText()),txtDescriptionnascent2.getText(), this.provinceID, this.cantonID, this.districtsID, this.entityID));
-}
 
-    
+    public void addNacents(JTable tblNascents, JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2) {
+
+        this.daoNascent.createNascent(new Nascent(txtNamenascent2.getText(), txtAddressnascent2.getText(), Integer.parseInt(txtLatitudenascent2.getText()), Integer.parseInt(txtLengthnascent2.getText()), txtDescriptionnascent2.getText(), this.provinceID, this.cantonID, this.districtsID, this.entityID));
+    }
+
     public void getIdProvinces(JComboBox cbxProvince2) {
         this.provinceID = this.daoNascent.getIDProvince(cbxProvince2.getSelectedItem().toString());
     }
-    
+
     public void getIdCantons(JComboBox Cantons) {
         this.cantonID = this.daoNascent.getIDCanton(Cantons.getSelectedItem().toString());
     }
-     
+
     public void getIdDistrictis(JComboBox District) {
-        this.districtsID= this.daoNascent.getIDDistrict(District.getSelectedItem().toString());
+        this.districtsID = this.daoNascent.getIDDistrict(District.getSelectedItem().toString());
     }
-      
+
     public void getIdEnty(JComboBox Entitys) {
-        this.entityID= this.daoNascent.getIDEntity(Entitys.getSelectedItem().toString());
+        this.entityID = this.daoNascent.getIDEntity(Entitys.getSelectedItem().toString());
     }
-    
+
     public void clearNascent(JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2) {
         txtNamenascent2.setText("");
         txtAddressnascent2.setText("");
@@ -108,10 +106,7 @@ public class CtrlNascent {
         txtLengthnascent2.setText("");
         txtDescriptionnascent2.setText("");
     }
-    
-    
-   
-    
+
     public void loadProvinces(JComboBox cbxProvince) {
         List<Province> provinces = daoProvince.readProvince();
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
@@ -151,16 +146,25 @@ public class CtrlNascent {
         cbxsentity.setModel(model);
     }
 
-    public void loadDataNascent(JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2, JComboBox<String> cbxProvince2, JComboBox<String> cbxCanton2, JComboBox<String> cbxDistrict2, JComboBox<String> cbxentity2) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public void showEntity(JTable tblDatos, JComboBox<String> cbxEntityr) {
+        DefaultTableModel model = (DefaultTableModel) tblDatos.getModel();
+        model.setRowCount(0);  
 
-    public void loadDataMeasurement(JTable tblNascents) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        List<Nascent> entityDetails = daoNascent.readNascent();
 
-    public void addNacents(JTextField txtNamenascent2, JTextField txtAddressnascent2, JTextField txtLatitudenascent2, JTextField txtLengthnascent2, JTextField txtDescriptionnascent2) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for (Nascent report : entityDetails) {
+            model.addRow(new Object[]{
+                report.getId(),
+                report.getName(),
+                report.getAddress(),
+                report.getLatitude(),
+                report.getLength(),
+                report.getDescription(),
+                report.getProvince_id(),
+                report.getCanton_id(),
+                report.getDistrict_id()
+            });
+        }
     }
 
 }

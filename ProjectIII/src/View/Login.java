@@ -2,6 +2,7 @@ package View;
 
 import javax.swing.JOptionPane;
 //@author Cristopher Matus
+
 public class Login extends javax.swing.JFrame {
 
     public Login() {
@@ -9,29 +10,27 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-public void Ingresar() {
-String enteredUser = txtuser.getText();
-    String enteredPassword = Txtpassword.getText();
-    
-    if (enteredUser.equals("Fabricio") && enteredPassword.equals("superadmin")) {
-        // Nombre de usuario y contraseña correctos para Fabricio
-        SuperAdmin adminFrame = new SuperAdmin();
-        adminFrame.setVisible(true);
-    } else if (enteredUser.equals("Cristopher") && enteredPassword.equals("digitador")) {
-        // Nombre de usuario y contraseña correctos para Cristopher
-        Digitizer digitizerFrame = new Digitizer();
-        digitizerFrame.setVisible(true);
-    } else if (enteredUser.equals("Deivis") && enteredPassword.equals("admin")) {
-        // Nombre de usuario y contraseña correctos para Deivis
-        Admin adminFrame = new Admin();
-        adminFrame.setVisible(true);
-    } else {
-        // Nombre de usuario o contraseña incorrectos, muestra un mensaje de error
-        JOptionPane.showMessageDialog(null, "Nombre de usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+    public void Ingresar() {
+        String enteredUser = txtuser.getText();
+        String enteredPassword = Txtpassword.getText();
+
+        if (enteredUser.equals("Fabricio") && enteredPassword.equals("superadmin")) {
+            // Nombre de usuario y contraseña correctos para Fabricio
+            SuperAdmin adminFrame = new SuperAdmin();
+            adminFrame.setVisible(true);
+        } else if (enteredUser.equals("Cristopher") && enteredPassword.equals("digitador")) {
+            // Nombre de usuario y contraseña correctos para Cristopher
+            Digitizer digitizerFrame = new Digitizer();
+            digitizerFrame.setVisible(true);
+        } else if (enteredUser.equals("Deivis") && enteredPassword.equals("admin")) {
+            // Nombre de usuario y contraseña correctos para Deivis
+            Admin adminFrame = new Admin();
+            adminFrame.setVisible(true);
+        } else {
+            // Nombre de usuario o contraseña incorrectos, muestra un mensaje de error
+            JOptionPane.showMessageDialog(null, "Nombre de usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
-}
-
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

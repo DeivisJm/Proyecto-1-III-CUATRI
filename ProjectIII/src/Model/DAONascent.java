@@ -252,43 +252,42 @@ public class DAONascent {
         }
         return value;
     }
-    
+
     public Map<String, Nascent> getNascentsByEntity(String entityName) {
-    Map<String, Nascent> nascentsByEntity = new HashMap<>();
-    DBConnection db = new DBConnection();
-    String sql = "SELECT n.id, n.name, n.address, n.latitude, n.length, n.description " +
-                   "FROM nascents n " +
-                   "INNER JOIN entities e ON n.entity_id = e.id " +
-                   "WHERE e.name = ?";
-   
+        Map<String, Nascent> nascentsByEntity = new HashMap<>();
+        DBConnection db = new DBConnection();
+        String sql = "SELECT n.id, n.name, n.address, n.latitude, n.length, n.description "
+                + "FROM nascents n "
+                + "INNER JOIN entities e ON n.entity_id = e.id "
+                + "WHERE e.name = ?";
 
-   try {
-    PreparedStatement ps = db.getConnection().prepareStatement(sql);
-    ps.setString(1, entityName);
-    ResultSet resultSet = ps.executeQuery();
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ps.setString(1, entityName);
+            ResultSet resultSet = ps.executeQuery();
 
-    while (resultSet.next()) {
-        int nascentId = resultSet.getInt("id");
-        String nascentName = resultSet.getString("name");
-        String nascentAddress = resultSet.getString("address");
-        double nascentLatitude = resultSet.getDouble("latitude");
-        double nascentLongitude = resultSet.getDouble("longitude");
-        String nascentDescription = resultSet.getString("description");
+            while (resultSet.next()) {
+                int nascentId = resultSet.getInt("id");
+                String nascentName = resultSet.getString("name");
+                String nascentAddress = resultSet.getString("address");
+                double nascentLatitude = resultSet.getDouble("latitude");
+                double nascentLength = resultSet.getDouble("length");
+                String nascentDescription = resultSet.getString("description");
 
-        // Create an instance of Nascent with the retrieved data
-        Nascent nascent = new Nascent(nascentId, nascentName, nascentAddress, nascentLatitude, nascentLongitude, nascentDescription);
-        
-        // Add the Nascent to the Map using the name as the key
-        nascentsByEntity.put(nascentName, nascent);
-    }
-} catch (SQLException e) {
-    e.printStackTrace();
-    // Exception handling
-} finally {
-    db.disconnect();
-}
+                // Create an instance of Nascent with the retrieved data
+                Nascent nascent = new Nascent(nascentId, nascentName, nascentAddress, nascentLatitude, nascentLength, nascentDescription);
 
-return nascentsByEntity;
+                // Add the Nascent to the Map using the name as the key
+                nascentsByEntity.put(nascentName, nascent);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Exception handling
+        } finally {
+            db.disconnect();
+        }
+
+        return nascentsByEntity;
 
     }
 }

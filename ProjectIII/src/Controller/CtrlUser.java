@@ -39,10 +39,11 @@ public class CtrlUser {
     }
 
     public void addUser(JTextField txtnameuser, JTextField txtfirst_lastname, JTextField txtsecond_lastname,
-            JTextField txtemailuser, JTextField txtpassworduser, JComboBox cbxrolid) {
+            JTextField txtemailuser, JTextField txtpassworduser, JComboBox cbxrolid, JComboBox cbxentityid) {
 
         String rolName = cbxrolid.getSelectedItem().toString();
         int rolId = daorol.getIDRol(rolName);
+        String entityName  = cbxentityid.getSelectedItem().toString();
 
         User user = new User(txtnameuser.getText(), txtfirst_lastname.getText(), txtsecond_lastname.getText(),
                 txtemailuser.getText(), txtpassworduser.getText(), 0, rolId);

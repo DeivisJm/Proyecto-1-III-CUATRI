@@ -17,10 +17,10 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
-
 public class SuperAdmin extends javax.swing.JFrame {
+
     CtrlReports re = new CtrlReports();
-    
+
     CtrlUser cu = new CtrlUser();
     CtrlEntity ce = new CtrlEntity();
     CtrlSampling_site cs = new CtrlSampling_site();
@@ -57,9 +57,9 @@ public class SuperAdmin extends javax.swing.JFrame {
         this.cn.loadDistrict(cbxDistrict2);
 
     }
-    
+
     private void entitys() {
-        this.re.loadEnty(cbxEntity);
+        this.re.loadEnty(cbxEntityr);
     }
 
     private void loadDataUser() {
@@ -77,23 +77,23 @@ public class SuperAdmin extends javax.swing.JFrame {
     private void loadDataNascent() {
         this.cn.loadDataNascent(tblNascents);
     }
-    
-    private void loadDataMeasurent(){
+
+    private void loadDataMeasurent() {
         this.cm.loadDataMeasurement(tblCaudal);
     }
 
     private void clear() {
         this.ce.clearEntities(txtIdnumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
     }
-    
-    private void clear4(){
+
+    private void clear4() {
         this.cm.clearMeasurements(txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4, txtRealizado4);
     }
-    
-    private void clean(){
+
+    private void clean() {
         this.cn.clearNascent(txtNamenascent2, txtAddressnascent2, txtLatitudenascent2, txtLengthnascent2, txtDescriptionnascent2);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -192,7 +192,7 @@ public class SuperAdmin extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
         btnGraficar = new javax.swing.JButton();
-        cbxEntity = new javax.swing.JComboBox<>();
+        cbxEntityr = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -1120,16 +1120,32 @@ public class SuperAdmin extends javax.swing.JFrame {
 
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nombre", "Direccion", "Latitud", "Longitud", "Descripcion", "Provincia", "Canton ", "Distrito"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane6.setViewportView(tblDatos);
+        if (tblDatos.getColumnModel().getColumnCount() > 0) {
+            tblDatos.getColumnModel().getColumn(0).setResizable(false);
+            tblDatos.getColumnModel().getColumn(1).setResizable(false);
+            tblDatos.getColumnModel().getColumn(2).setResizable(false);
+            tblDatos.getColumnModel().getColumn(3).setResizable(false);
+            tblDatos.getColumnModel().getColumn(4).setResizable(false);
+            tblDatos.getColumnModel().getColumn(5).setResizable(false);
+            tblDatos.getColumnModel().getColumn(6).setResizable(false);
+            tblDatos.getColumnModel().getColumn(7).setResizable(false);
+            tblDatos.getColumnModel().getColumn(8).setResizable(false);
+        }
 
         btnGraficar.setText("Graficar");
         btnGraficar.addActionListener(new java.awt.event.ActionListener() {
@@ -1138,10 +1154,10 @@ public class SuperAdmin extends javax.swing.JFrame {
             }
         });
 
-        cbxEntity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxEntity.addActionListener(new java.awt.event.ActionListener() {
+        cbxEntityr.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxEntityr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxEntityActionPerformed(evt);
+                cbxEntityrActionPerformed(evt);
             }
         });
 
@@ -1150,26 +1166,23 @@ public class SuperAdmin extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(cbxEntity, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(15, 15, 15)
+                .addComponent(cbxEntityr, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
                 .addComponent(btnGraficar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnGraficar)
-                            .addComponent(cbxEntity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cbxEntityr, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnGraficar)))
                 .addContainerGap(169, Short.MAX_VALUE))
         );
 
@@ -1242,7 +1255,7 @@ public class SuperAdmin extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
                             .addComponent(jLabel11)
                             .addGap(62, 62, 62)
-                            .addComponent(txtpassworduser))
+                            .addComponent(txtpassworduser, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
                             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel10)
@@ -1486,7 +1499,7 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminateuser6ActionPerformed
 
     private void btnEdituser6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdituser6ActionPerformed
-        
+
 
     }//GEN-LAST:event_btnEdituser6ActionPerformed
 
@@ -1513,7 +1526,7 @@ public class SuperAdmin extends javax.swing.JFrame {
 
         // Si todos los campos son válidos, procede con la acción deseada
         if (isIdNumberValid && isNameValid && isEmailValid && isPhoneNumberValid && isAddressValid && isDescriptionValid) {
-            
+
         }
         this.ce.addEntities(tblentities, txtIdnumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
         this.ce.clearEntities(txtIdnumberentity1, txtNameentity1, txtEmailentity1, txtCelphone1, txtAddressentity1, txtDescriptionentity1);
@@ -1524,7 +1537,7 @@ public class SuperAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.ce.deleteEntities();
         this.clear();
-         this.ce.loadDataEntity(tblentities);
+        this.ce.loadDataEntity(tblentities);
     }//GEN-LAST:event_btnEliminate1ActionPerformed
 
     private void tblSampling_siteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSampling_siteMouseClicked
@@ -1560,13 +1573,13 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEdit1ActionPerformed
 
     private void tblCaudalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCaudalMouseClicked
-       this.cm.selectedRowMeasurement(tblCaudal, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtWeather4, txtRealizado4, cbxNascent, cbxSites);
+        this.cm.selectedRowMeasurement(tblCaudal, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtWeather4, txtRealizado4, cbxNascent, cbxSites);
     }//GEN-LAST:event_tblCaudalMouseClicked
 
     private void btnEdit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdit4ActionPerformed
-       this.cm.updatedMeasurement(txtIdnumberentity1, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4);
-       this.clear();
-       this.cm.loadDataMeasurement(tblCaudal);
+        this.cm.updatedMeasurement(txtIdnumberentity1, txtCapacity4, txtMethod4, txtObsevation4, txtDate4, txtDate4);
+        this.clear();
+        this.cm.loadDataMeasurement(tblCaudal);
     }//GEN-LAST:event_btnEdit4ActionPerformed
 
     private void BtnEliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminar4ActionPerformed
@@ -1588,7 +1601,7 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxrolidActionPerformed
 
     private void btnEditar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar2ActionPerformed
-       
+
     }//GEN-LAST:event_btnEditar2ActionPerformed
 
     private void cbxEntity3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEntity3ActionPerformed
@@ -1612,32 +1625,32 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxentityidActionPerformed
 
     private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
-                 // Obtener los valores de los campos de texto y ComboBox
-    String capacity = txtCapacity4.getText();
-    String method = txtMethod4.getText();
-    String observation = txtObsevation4.getText();
-    String date = txtDate4.getText();
-    String clima = txtWeather4.getText();
-    String realizado = txtRealizado4.getText();
-    String nascent = cbxNascent.getSelectedItem().toString();
-    String site = cbxSites.getSelectedItem().toString();
+        // Obtener los valores de los campos de texto y ComboBox
+        String capacity = txtCapacity4.getText();
+        String method = txtMethod4.getText();
+        String observation = txtObsevation4.getText();
+        String date = txtDate4.getText();
+        String clima = txtWeather4.getText();
+        String realizado = txtRealizado4.getText();
+        String nascent = cbxNascent.getSelectedItem().toString();
+        String site = cbxSites.getSelectedItem().toString();
 
-    // Generar un ID automáticamente
-    DefaultTableModel model = (DefaultTableModel) tblCaudal.getModel();
-    int id = model.getRowCount() + 1;
+        // Generar un ID automáticamente
+        DefaultTableModel model = (DefaultTableModel) tblCaudal.getModel();
+        int id = model.getRowCount() + 1;
 
-    // Agregar los datos a la tabla
-    model.addRow(new Object[]{id, capacity, method, observation, date, clima, realizado, nascent, site});
+        // Agregar los datos a la tabla
+        model.addRow(new Object[]{id, capacity, method, observation, date, clima, realizado, nascent, site});
 
-    // Limpiar los campos de texto después de agregar los datos
-    txtCapacity4.setText("");
-    txtMethod4.setText("");
-    txtObsevation4.setText("");
-    txtDate4.setText("");
-    txtWeather4.setText("");
-    txtRealizado4.setText("");
-          
-        
+        // Limpiar los campos de texto después de agregar los datos
+        txtCapacity4.setText("");
+        txtMethod4.setText("");
+        txtObsevation4.setText("");
+        txtDate4.setText("");
+        txtWeather4.setText("");
+        txtRealizado4.setText("");
+
+
     }//GEN-LAST:event_btnAdd4ActionPerformed
 
     private void cbxNascentItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNascentItemStateChanged
@@ -1666,26 +1679,26 @@ public class SuperAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminate3ActionPerformed
 
     private void cbxProvince2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxProvince2ItemStateChanged
-        
+
     }//GEN-LAST:event_cbxProvince2ItemStateChanged
 
     private void cbxCanton2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxCanton2ItemStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxCanton2ItemStateChanged
 
-    private void cbxEntityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEntityActionPerformed
-        String entitySelected = cbxEntity.getSelectedItem().toString();
-        this.re.loadNascentSelected(tblDatos, entitySelected);
+    private void cbxEntityrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEntityrActionPerformed
+        String entitySelected = cbxEntityr.getSelectedItem().toString();
+        this.cn.showEntity(tblDatos, cbxEntityr);
         this.btnGraficar.setEnabled(true);
-    }//GEN-LAST:event_cbxEntityActionPerformed
+    }//GEN-LAST:event_cbxEntityrActionPerformed
 
     private void btnGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarActionPerformed
-          String entityName = cbxEntity.getSelectedItem().toString();
-    Map<String, Nascent> nascentsByEntity = dao.getNascentsByEntity(entityName);
-    
-    if (!nascentsByEntity.isEmpty()) {
-        re.generateBarChart(nascentsByEntity); // Llama al método desde la instancia de CtrlReports
-    }
+        String entityName = cbxEntityr.getSelectedItem().toString();
+        Map<String, Nascent> nascentsByEntity = dao.getNascentsByEntity(entityName);
+
+        if (!nascentsByEntity.isEmpty()) {
+            re.generateBarChart(nascentsByEntity); // Llama al método desde la instancia de CtrlReports
+        }
     }//GEN-LAST:event_btnGraficarActionPerformed
 
     private void cbxNascentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNascentActionPerformed
@@ -1718,8 +1731,8 @@ public class SuperAdmin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxCanton_id3;
     private javax.swing.JComboBox<String> cbxDistrict2;
     private javax.swing.JComboBox<String> cbxDistrict3;
-    private javax.swing.JComboBox<String> cbxEntity;
     private javax.swing.JComboBox<String> cbxEntity3;
+    private javax.swing.JComboBox<String> cbxEntityr;
     private javax.swing.JComboBox<String> cbxNascent;
     private javax.swing.JComboBox<String> cbxProvince2;
     private javax.swing.JComboBox<String> cbxProvince_id3;

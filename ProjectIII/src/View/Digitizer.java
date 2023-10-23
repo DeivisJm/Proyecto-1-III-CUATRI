@@ -33,7 +33,6 @@ public class Digitizer extends javax.swing.JFrame {
         this.cm.loadNascents(cbxNascent);
     }
 
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -147,7 +146,7 @@ public class Digitizer extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 211, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(33, 33, 33)
@@ -321,12 +320,20 @@ public class Digitizer extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel29.setText("Rol:");
 
+        txtNombre.setEditable(false);
+
+        txtApellido1.setEditable(false);
         txtApellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellido1ActionPerformed(evt);
             }
         });
 
+        txtApellido2.setEditable(false);
+
+        txtCorreo.setEditable(false);
+
+        txtContraseña.setEditable(false);
         txtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContraseñaActionPerformed(evt);
@@ -339,6 +346,10 @@ public class Digitizer extends javax.swing.JFrame {
                 btnCargarPerfilActionPerformed(evt);
             }
         });
+
+        txtEntidad.setEditable(false);
+
+        txtRol.setEditable(false);
 
         javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
         panel3.setLayout(panel3Layout);
@@ -363,7 +374,7 @@ public class Digitizer extends javax.swing.JFrame {
                                 .addComponent(jLabel29))
                             .addGap(63, 63, 63)
                             .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtContraseña)
+                                .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                                 .addComponent(txtEntidad)
                                 .addComponent(txtRol))))
                     .addGroup(panel3Layout.createSequentialGroup()
@@ -376,9 +387,8 @@ public class Digitizer extends javax.swing.JFrame {
                             .addGroup(panel3Layout.createSequentialGroup()
                                 .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(292, 292, 292)
-                                .addComponent(btnCargarPerfil)
-                                .addGap(144, 144, 144)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnCargarPerfil)))))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,7 +430,7 @@ public class Digitizer extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 790, Short.MAX_VALUE)
+                .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -524,53 +534,19 @@ public class Digitizer extends javax.swing.JFrame {
 
     private void btnCargarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarPerfilActionPerformed
         // TODO add your handling code here:
-          // Cargar los datos en los campos de texto
-                txtNombre.setText("Cristopher");
-                txtApellido1.setText("Matus");
-                txtApellido2.setText("Salas");
-                txtCorreo.setText("matus9@gmail.com");
-                txtContraseña.setText("digitador");
-                txtEntidad.setText("MUNICIPALIDAD SAN CARLOS");
-                txtRol.setText("Digitador");
+        // Cargar los datos en los campos de texto
+        txtNombre.setText("Cristopher");
+        txtApellido1.setText("Matus");
+        txtApellido2.setText("Salas");
+        txtCorreo.setText("matus9@gmail.com");
+        txtContraseña.setText("digitador");
+        txtEntidad.setText("MUNICIPALIDAD SAN CARLOS");
+        txtRol.setText("Digitador");
         Component frame = null;
-                JOptionPane.showMessageDialog(frame, "Perfil cargado");
-            
+        JOptionPane.showMessageDialog(frame, "Perfil cargado");
+
     }//GEN-LAST:event_btnCargarPerfilActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Digitizer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Digitizer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Digitizer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Digitizer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Digitizer().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd4;
