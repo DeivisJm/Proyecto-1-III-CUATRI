@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.DAOEntity;
+import Model.DAOEntity;// These lines import various classes and packages that are used in this class.
 import Model.DAONascent;
 import Model.DAOSampling_site;
 import Model.DAOmeasurement;
@@ -25,27 +25,31 @@ import javax.swing.table.TableRowSorter;
  *
  * @author fabri
  */
-public class CtrlMeasurement {
+public class CtrlMeasurement { // This line declares the start of the CtrlMeasurement class.
 
-    DAOmeasurement me = new DAOmeasurement();
+    DAOmeasurement me = new DAOmeasurement();// These lines declare class variables and initialize instances of various DAO and model classes.
     DAONascent na = new DAONascent();
     DAOSampling_site st = new DAOSampling_site();
     int id;
     int nascentID;
     int samplingID;
-
+    
+// This line declares a public method named loadDataMeasurement which takes a JTable as a parameter
     public void loadDataMeasurement(JTable tblCaudal) {
-        DefaultTableModel model = (DefaultTableModel) tblCaudal.getModel();
-        TableRowSorter<TableModel> order = new TableRowSorter<TableModel>(model);
+        DefaultTableModel model = (DefaultTableModel) tblCaudal.getModel(); // This line retrieves the table model from the provided JTable.
+
+        TableRowSorter<TableModel> order = new TableRowSorter<TableModel>(model);// These lines create a TableRowSorter for the table, enabling sorting of table rows.
         tblCaudal.setRowSorter(order);
-        model.setRowCount(0);
+        model.setRowCount(0); // This line sets the row count of the table model to 0, effectively clearing any existing data in the table.
 
-        List<Measurement> measurements = me.readMeasurement();
+        List<Measurement> measurements = me.readMeasurement(); // This line retrieves a list of measurements using a DAO object.
 
-        for (Measurement mes : measurements) {
-            id = mes.getId();
+         
+        for (Measurement mes : measurements) {// This line starts a loop over the measurements in the list.
+            id = mes.getId();// This line assigns the ID of the current measurement to the 'id' class variable.
+            // This line creates an array of objects representing the data of the current measurement.
             Object[] row = {mes.getId(), mes.getCapacity(), mes.getMethod(), mes.getObservation(), mes.getDate(), mes.getWeather(), me.getNameNacent(mes.getNascent_id()), me.getNameSampling(mes.getSamplingsite_id())};
-            model.addRow(row);
+            model.addRow(row); // This line adds the data row to the table model.
         }
     }
 
@@ -56,7 +60,7 @@ public class CtrlMeasurement {
     public void deleteM() {
         this.me.deleteMeasurement(this.id);
     }
-
+ // This method is used to populate fields with data from a selected row in a JTable.
     public void selectedRowMeasurement(JTable tblCaudal, JTextField txtCapacity4, JTextField txtMethod4,
             JTextField txtObservation4, JTextField txtDate4, JTextField txtClima4, JTextField txtRealizado4,
             JComboBox cbxNascent, JComboBox cbxSites) {
